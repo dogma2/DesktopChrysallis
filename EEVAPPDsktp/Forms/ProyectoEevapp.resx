@@ -117,6 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelDescription.Text" xml:space="preserve">
+    <value>EEVAPP es un sistema de notificación de eventos y datos de interés destinado a asociaciones que desean comunicarlos a sus asociados. La aplicación se desarrolla inicialmente para sistemas Android y con gestión distribuida desde las delegaciones con aplicación de escritorio para sistemas MS Windows.
+
+El nombre del proyecto “eevapp” corresponde a la sigla de Electronic EVents APPlication. Su pronunciación en inglés recuerda a la simpática, valiente y luchadora robot “Eva”, personaje coprotagonista de la Película de Disney Pixar Wall-E.
+
+Esto, junto al robot que identifica a Android, inspiran el logo que se asemeja al personaje de la película también se integra en el nombre de la aplicación utilizando la letra V. Los colores seleccionados son diferentes combinaciones de colores blanco, negro, verde-amarillo y turquesa que dan un toque futurista (colores poco naturales) y con cierta referencia al mundo Android.</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>EEVAPP es un sistema de notificación de eventos y datos de interés destinado a asociaciones que desean comunicarlos a sus asociados. La aplicación se desarrolla inicialmente para sistemas Android y con gestión distribuida desde las delegaciones con aplicación de escritorio para sistemas MS Windows.
 
@@ -124,13 +131,6 @@ El nombre del proyecto “eevapp” corresponde a la sigla de eLECTRONIC evENTS 
 
 Esto, junto al robot que identifica a Android, inspiran el logo que se asemeja al personaje de la película también se integra en el nombre de la aplicación utilizando la letra V. Los colores seleccionados son diferentes combinaciones de colores blanco, negro, verde-amarillo y turquesa que dan un toque futurista (colores poco naturales) y con cierta referencia al mundo Android.
 </value>
-  </data>
-  <data name="labelDescription.Text" xml:space="preserve">
-    <value>EEVAPP es un sistema de notificación de eventos y datos de interés destinado a asociaciones que desean comunicarlos a sus asociados. La aplicación se desarrolla inicialmente para sistemas Android y con gestión distribuida desde las delegaciones con aplicación de escritorio para sistemas MS Windows.
-
-El nombre del proyecto “eevapp” corresponde a la sigla de Electronic EVents APPlication. Su pronunciación en inglés recuerda a la simpática, valiente y luchadora robot “Eva”, personaje coprotagonista de la Película de Disney Pixar Wall-E.
-
-Esto, junto al robot que identifica a Android, inspiran el logo que se asemeja al personaje de la película también se integra en el nombre de la aplicación utilizando la letra V. Los colores seleccionados son diferentes combinaciones de colores blanco, negro, verde-amarillo y turquesa que dan un toque futurista (colores poco naturales) y con cierta referencia al mundo Android.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

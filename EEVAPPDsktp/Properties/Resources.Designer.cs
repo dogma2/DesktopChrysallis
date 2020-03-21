@@ -63,6 +63,26 @@ namespace EEVAPPDsktp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap daagasemoji {
+            get {
+                object obj = ResourceManager.GetObject("daagasemoji", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dogma2_logobg {
+            get {
+                object obj = ResourceManager.GetObject("dogma2_logobg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eevapp_robot_blanco_y_blanco_fondo_transparente_300dpi___copia {
             get {
                 object obj = ResourceManager.GetObject("eevapp robot blanco y blanco fondo transparente 300dpi - copia", resourceCulture);
@@ -76,6 +96,16 @@ namespace EEVAPPDsktp.Properties {
         internal static System.Drawing.Bitmap eevapplogo {
             get {
                 object obj = ResourceManager.GetObject("eevapplogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap magomoemoji {
+            get {
+                object obj = ResourceManager.GetObject("magomoemoji", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

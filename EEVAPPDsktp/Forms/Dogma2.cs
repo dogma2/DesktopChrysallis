@@ -16,5 +16,10 @@ namespace EEVAPPDsktp.Forms
         {
             InitializeComponent();
         }
+        private void Dogma2_Click(object sender, EventArgs e) { this.Close(); }
+        private void pictureBoxDOGMA2_Click(object sender, EventArgs e) { this.Close(); }
+        private void pictureBoxdaagas_Click(object sender, EventArgs e) { this.Close(); }
+        private void pictureBoxUristoteles_Click(object sender, EventArgs e) { this.Close(); }
+        private void pictureBoxMaGoMo_Click(object sender, EventArgs e) { this.Close(); }
     }
 }
