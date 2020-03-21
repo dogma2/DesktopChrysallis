@@ -75,7 +75,8 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - BOTON AGREGAR
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            asignDataEntityToForm((DELEGACIONES)listBoxLista.SelectedItem);
+            listBoxLista.SelectedIndex = (-1);
+            asignDataEntityToForm(generateEmptyEntity());
             isModified = false;
         }
 

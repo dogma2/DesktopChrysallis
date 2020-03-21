@@ -67,8 +67,8 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - BOTON AGREGAR
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            asignDataEntityToForm((DSKTUSERS)listBoxLista.SelectedItem);
-            isModified = false;
+            listBoxLista.SelectedIndex = (-1);
+            asignDataEntityToForm(generateEmptyEntity());
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - BOTON ALMACENAR

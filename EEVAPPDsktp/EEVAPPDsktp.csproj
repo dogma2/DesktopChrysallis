@@ -274,6 +274,7 @@
     <None Include="Images\dogma2_logobg.png" />
     <None Include="Images\magomoemoji.png" />
     <None Include="Images\daagasemoji.png" />
+    <None Include="Images\uristotelesemoji.png" />
     <Content Include="ModelEevapp.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelEevapp.Context.cs</LastGenOutput>

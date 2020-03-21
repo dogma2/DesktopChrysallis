@@ -29,15 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dogma2));
+            this.pictureBoxUristoteles = new System.Windows.Forms.PictureBox();
             this.pictureBoxdaagas = new System.Windows.Forms.PictureBox();
             this.pictureBoxMaGoMo = new System.Windows.Forms.PictureBox();
             this.pictureBoxDOGMA2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxUristoteles = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUristoteles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxdaagas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaGoMo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDOGMA2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUristoteles)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBoxUristoteles
+            // 
+            this.pictureBoxUristoteles.Image = global::EEVAPPDsktp.Properties.Resources.uristotelesemoji;
+            this.pictureBoxUristoteles.Location = new System.Drawing.Point(235, 147);
+            this.pictureBoxUristoteles.Name = "pictureBoxUristoteles";
+            this.pictureBoxUristoteles.Size = new System.Drawing.Size(124, 153);
+            this.pictureBoxUristoteles.TabIndex = 3;
+            this.pictureBoxUristoteles.TabStop = false;
+            this.pictureBoxUristoteles.Click += new System.EventHandler(this.pictureBoxUristoteles_Click);
             // 
             // pictureBoxdaagas
             // 
@@ -69,16 +79,6 @@
             this.pictureBoxDOGMA2.TabStop = false;
             this.pictureBoxDOGMA2.Click += new System.EventHandler(this.pictureBoxDOGMA2_Click);
             // 
-            // pictureBoxUristoteles
-            // 
-            this.pictureBoxUristoteles.Image = global::EEVAPPDsktp.Properties.Resources.daagasemoji;
-            this.pictureBoxUristoteles.Location = new System.Drawing.Point(239, 160);
-            this.pictureBoxUristoteles.Name = "pictureBoxUristoteles";
-            this.pictureBoxUristoteles.Size = new System.Drawing.Size(115, 140);
-            this.pictureBoxUristoteles.TabIndex = 3;
-            this.pictureBoxUristoteles.TabStop = false;
-            this.pictureBoxUristoteles.Click += new System.EventHandler(this.pictureBoxUristoteles_Click);
-            // 
             // Dogma2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,10 +97,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "grupo DOGMA2";
             this.Click += new System.EventHandler(this.Dogma2_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUristoteles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxdaagas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaGoMo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDOGMA2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUristoteles)).EndInit();
             this.ResumeLayout(false);
 
         }

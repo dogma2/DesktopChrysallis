@@ -125,11 +125,10 @@
             // 
             // textBoxId
             // 
-            this.textBoxId.Location = new System.Drawing.Point(443, 9);
+            this.textBoxId.Location = new System.Drawing.Point(402, 9);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(10, 20);
+            this.textBoxId.Size = new System.Drawing.Size(51, 20);
             this.textBoxId.TabIndex = 0;
-            this.textBoxId.Visible = false;
             // 
             // comboBoxComunidad
             // 
