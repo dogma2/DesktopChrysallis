@@ -29,6 +29,7 @@ namespace EEVAPPDsktp.Forms
             InitializeComponent();
         }
 
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ONLOAD
         private void Administradores_Load(object sender, EventArgs e)
         {
             loadListsDataToForm();
@@ -135,7 +136,6 @@ namespace EEVAPPDsktp.Forms
                 else { checkBoxActivado.Checked = false; }
                 textBoxNombre.Text = entidad.nombre;
                 textBoxEmail.Text = entidad.email;
-
                 if (entidad.idccaa > 0)
                 {
                     comboBoxComunidad.SelectedValue = entidad.idccaa;

@@ -31,304 +31,368 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfiguracionInicial));
             this.buttonAlmacenar = new System.Windows.Forms.Button();
             this.groupBoxDatos = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelClave = new System.Windows.Forms.Label();
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.checkBoxMaster = new System.Windows.Forms.CheckBox();
+            this.groupLang = new System.Windows.Forms.GroupBox();
+            this.comboBoxLang = new System.Windows.Forms.ComboBox();
+            this.labelLangText = new System.Windows.Forms.Label();
+            this.checkBoxSound = new System.Windows.Forms.CheckBox();
+            this.groupBoxAlert = new System.Windows.Forms.GroupBox();
+            this.labelAlertFromSep = new System.Windows.Forms.Label();
+            this.labelAlertToSep = new System.Windows.Forms.Label();
+            this.textBoxAlertToMM = new System.Windows.Forms.TextBox();
+            this.textBoxAlertFromMM = new System.Windows.Forms.TextBox();
+            this.labelAlertToHs = new System.Windows.Forms.Label();
+            this.labelAlertToText = new System.Windows.Forms.Label();
+            this.textBoxAlertToHH = new System.Windows.Forms.TextBox();
+            this.labelAlertFromHs = new System.Windows.Forms.Label();
+            this.labelAlertFromText = new System.Windows.Forms.Label();
+            this.textBoxAlertFromHH = new System.Windows.Forms.TextBox();
+            this.checkBoxShortAlertAct = new System.Windows.Forms.CheckBox();
+            this.checkBoxLongAlertAct = new System.Windows.Forms.CheckBox();
+            this.labelShortAlertHs = new System.Windows.Forms.Label();
+            this.labelShortAlertText = new System.Windows.Forms.Label();
+            this.textBoxShortAlert = new System.Windows.Forms.TextBox();
+            this.labelLongAlertHs = new System.Windows.Forms.Label();
+            this.labelLongAlertText = new System.Windows.Forms.Label();
+            this.textBoxLongAlert = new System.Windows.Forms.TextBox();
+            this.groupBoxUpdate = new System.Windows.Forms.GroupBox();
+            this.labelUpdateHs = new System.Windows.Forms.Label();
+            this.labelUpdateText = new System.Windows.Forms.Label();
+            this.textBoxUpdate = new System.Windows.Forms.TextBox();
+            this.checkBoxGPS = new System.Windows.Forms.CheckBox();
+            this.buttonUpLoad = new System.Windows.Forms.Button();
             this.groupBoxDatos.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupLang.SuspendLayout();
+            this.groupBoxAlert.SuspendLayout();
+            this.groupBoxUpdate.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAlmacenar
             // 
-            this.buttonAlmacenar.Location = new System.Drawing.Point(231, 456);
+            this.buttonAlmacenar.Location = new System.Drawing.Point(231, 500);
             this.buttonAlmacenar.Name = "buttonAlmacenar";
             this.buttonAlmacenar.Size = new System.Drawing.Size(75, 23);
             this.buttonAlmacenar.TabIndex = 30;
             this.buttonAlmacenar.Text = "Almacenar";
             this.buttonAlmacenar.UseVisualStyleBackColor = true;
+            this.buttonAlmacenar.Click += new System.EventHandler(this.buttonAlmacenar_Click);
             // 
             // groupBoxDatos
             // 
-            this.groupBoxDatos.Controls.Add(this.checkBox3);
-            this.groupBoxDatos.Controls.Add(this.groupBox2);
-            this.groupBoxDatos.Controls.Add(this.groupBox1);
-            this.groupBoxDatos.Controls.Add(this.checkBoxMaster);
+            this.groupBoxDatos.Controls.Add(this.groupLang);
+            this.groupBoxDatos.Controls.Add(this.checkBoxSound);
+            this.groupBoxDatos.Controls.Add(this.groupBoxAlert);
+            this.groupBoxDatos.Controls.Add(this.groupBoxUpdate);
+            this.groupBoxDatos.Controls.Add(this.checkBoxGPS);
             this.groupBoxDatos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBoxDatos.Location = new System.Drawing.Point(32, 26);
+            this.groupBoxDatos.Location = new System.Drawing.Point(32, 23);
             this.groupBoxDatos.Name = "groupBoxDatos";
-            this.groupBoxDatos.Size = new System.Drawing.Size(274, 415);
+            this.groupBoxDatos.Size = new System.Drawing.Size(274, 464);
             this.groupBoxDatos.TabIndex = 0;
             this.groupBoxDatos.TabStop = false;
             this.groupBoxDatos.Text = "Datos Configuración";
             // 
-            // checkBox3
+            // groupLang
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(16, 69);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(113, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "SONIDO Activado";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.groupLang.Controls.Add(this.comboBoxLang);
+            this.groupLang.Controls.Add(this.labelLangText);
+            this.groupLang.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupLang.Location = new System.Drawing.Point(16, 65);
+            this.groupLang.Name = "groupLang";
+            this.groupLang.Size = new System.Drawing.Size(240, 68);
+            this.groupLang.TabIndex = 0;
+            this.groupLang.TabStop = false;
+            this.groupLang.Text = "Idioma de App";
             // 
-            // groupBox2
+            // comboBoxLang
             // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox2.Location = new System.Drawing.Point(16, 188);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(240, 205);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Notificaciones";
+            this.comboBoxLang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLang.FormattingEnabled = true;
+            this.comboBoxLang.Items.AddRange(new object[] {
+            "Castellano",
+            "Catalá",
+            "Euskera",
+            "Galego"});
+            this.comboBoxLang.Location = new System.Drawing.Point(114, 25);
+            this.comboBoxLang.Name = "comboBoxLang";
+            this.comboBoxLang.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLang.TabIndex = 3;
+            this.comboBoxLang.SelectedIndexChanged += new System.EventHandler(this.comboBoxLang_SelectedIndexChanged);
             // 
-            // label11
+            // labelLangText
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(159, 124);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = ":";
+            this.labelLangText.AutoSize = true;
+            this.labelLangText.Location = new System.Drawing.Point(13, 28);
+            this.labelLangText.Name = "labelLangText";
+            this.labelLangText.Size = new System.Drawing.Size(95, 13);
+            this.labelLangText.TabIndex = 0;
+            this.labelLangText.Text = "Idioma por defecto";
             // 
-            // label10
+            // checkBoxSound
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(160, 163);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 17);
-            this.label10.TabIndex = 0;
-            this.label10.Text = ":";
+            this.checkBoxSound.AutoSize = true;
+            this.checkBoxSound.Location = new System.Drawing.Point(143, 29);
+            this.checkBoxSound.Name = "checkBoxSound";
+            this.checkBoxSound.Size = new System.Drawing.Size(113, 17);
+            this.checkBoxSound.TabIndex = 2;
+            this.checkBoxSound.Text = "SONIDO Activado";
+            this.checkBoxSound.UseVisualStyleBackColor = true;
+            this.checkBoxSound.CheckedChanged += new System.EventHandler(this.checkBoxSound_CheckedChanged);
             // 
-            // textBox5
+            // groupBoxAlert
             // 
-            this.textBox5.Location = new System.Drawing.Point(172, 163);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(31, 20);
-            this.textBox5.TabIndex = 11;
+            this.groupBoxAlert.Controls.Add(this.labelAlertFromSep);
+            this.groupBoxAlert.Controls.Add(this.labelAlertToSep);
+            this.groupBoxAlert.Controls.Add(this.textBoxAlertToMM);
+            this.groupBoxAlert.Controls.Add(this.textBoxAlertFromMM);
+            this.groupBoxAlert.Controls.Add(this.labelAlertToHs);
+            this.groupBoxAlert.Controls.Add(this.labelAlertToText);
+            this.groupBoxAlert.Controls.Add(this.textBoxAlertToHH);
+            this.groupBoxAlert.Controls.Add(this.labelAlertFromHs);
+            this.groupBoxAlert.Controls.Add(this.labelAlertFromText);
+            this.groupBoxAlert.Controls.Add(this.textBoxAlertFromHH);
+            this.groupBoxAlert.Controls.Add(this.checkBoxShortAlertAct);
+            this.groupBoxAlert.Controls.Add(this.checkBoxLongAlertAct);
+            this.groupBoxAlert.Controls.Add(this.labelShortAlertHs);
+            this.groupBoxAlert.Controls.Add(this.labelShortAlertText);
+            this.groupBoxAlert.Controls.Add(this.textBoxShortAlert);
+            this.groupBoxAlert.Controls.Add(this.labelLongAlertHs);
+            this.groupBoxAlert.Controls.Add(this.labelLongAlertText);
+            this.groupBoxAlert.Controls.Add(this.textBoxLongAlert);
+            this.groupBoxAlert.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBoxAlert.Location = new System.Drawing.Point(16, 240);
+            this.groupBoxAlert.Name = "groupBoxAlert";
+            this.groupBoxAlert.Size = new System.Drawing.Size(240, 205);
+            this.groupBoxAlert.TabIndex = 0;
+            this.groupBoxAlert.TabStop = false;
+            this.groupBoxAlert.Text = "Notificaciones";
             // 
-            // textBox6
+            // labelAlertFromSep
             // 
-            this.textBox6.Location = new System.Drawing.Point(172, 124);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(31, 20);
-            this.textBox6.TabIndex = 9;
+            this.labelAlertFromSep.AutoSize = true;
+            this.labelAlertFromSep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlertFromSep.Location = new System.Drawing.Point(159, 124);
+            this.labelAlertFromSep.Name = "labelAlertFromSep";
+            this.labelAlertFromSep.Size = new System.Drawing.Size(13, 17);
+            this.labelAlertFromSep.TabIndex = 0;
+            this.labelAlertFromSep.Text = ":";
             // 
-            // label8
+            // labelAlertToSep
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(209, 166);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(22, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "HS";
+            this.labelAlertToSep.AutoSize = true;
+            this.labelAlertToSep.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlertToSep.Location = new System.Drawing.Point(160, 163);
+            this.labelAlertToSep.Name = "labelAlertToSep";
+            this.labelAlertToSep.Size = new System.Drawing.Size(13, 17);
+            this.labelAlertToSep.TabIndex = 0;
+            this.labelAlertToSep.Text = ":";
             // 
-            // label9
+            // textBoxAlertToMM
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(67, 166);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "hasta las";
+            this.textBoxAlertToMM.Location = new System.Drawing.Point(172, 163);
+            this.textBoxAlertToMM.Name = "textBoxAlertToMM";
+            this.textBoxAlertToMM.Size = new System.Drawing.Size(31, 20);
+            this.textBoxAlertToMM.TabIndex = 12;
+            this.textBoxAlertToMM.TextChanged += new System.EventHandler(this.textBoxAlertToMM_TextChanged);
             // 
-            // textBox4
+            // textBoxAlertFromMM
             // 
-            this.textBox4.Location = new System.Drawing.Point(128, 163);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(31, 20);
-            this.textBox4.TabIndex = 10;
+            this.textBoxAlertFromMM.Location = new System.Drawing.Point(172, 124);
+            this.textBoxAlertFromMM.Name = "textBoxAlertFromMM";
+            this.textBoxAlertFromMM.Size = new System.Drawing.Size(31, 20);
+            this.textBoxAlertFromMM.TabIndex = 10;
+            this.textBoxAlertFromMM.TextChanged += new System.EventHandler(this.textBoxAlertFromMM_TextChanged);
             // 
-            // label6
+            // labelAlertToHs
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(209, 127);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(22, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "HS";
+            this.labelAlertToHs.AutoSize = true;
+            this.labelAlertToHs.Location = new System.Drawing.Point(209, 166);
+            this.labelAlertToHs.Name = "labelAlertToHs";
+            this.labelAlertToHs.Size = new System.Drawing.Size(22, 13);
+            this.labelAlertToHs.TabIndex = 0;
+            this.labelAlertToHs.Text = "HS";
             // 
-            // label7
+            // labelAlertToText
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 127);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Permitidas desde las";
+            this.labelAlertToText.AutoSize = true;
+            this.labelAlertToText.Location = new System.Drawing.Point(67, 166);
+            this.labelAlertToText.Name = "labelAlertToText";
+            this.labelAlertToText.Size = new System.Drawing.Size(49, 13);
+            this.labelAlertToText.TabIndex = 0;
+            this.labelAlertToText.Text = "hasta las";
             // 
-            // textBox3
+            // textBoxAlertToHH
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 124);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(31, 20);
-            this.textBox3.TabIndex = 8;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBoxAlertToHH.Location = new System.Drawing.Point(128, 163);
+            this.textBoxAlertToHH.Name = "textBoxAlertToHH";
+            this.textBoxAlertToHH.Size = new System.Drawing.Size(31, 20);
+            this.textBoxAlertToHH.TabIndex = 11;
+            this.textBoxAlertToHH.TextChanged += new System.EventHandler(this.textBoxAlertToHH_TextChanged);
             // 
-            // checkBox2
+            // labelAlertFromHs
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(16, 76);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.labelAlertFromHs.AutoSize = true;
+            this.labelAlertFromHs.Location = new System.Drawing.Point(209, 127);
+            this.labelAlertFromHs.Name = "labelAlertFromHs";
+            this.labelAlertFromHs.Size = new System.Drawing.Size(22, 13);
+            this.labelAlertFromHs.TabIndex = 0;
+            this.labelAlertFromHs.Text = "HS";
             // 
-            // checkBox1
+            // labelAlertFromText
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(16, 36);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.labelAlertFromText.AutoSize = true;
+            this.labelAlertFromText.Location = new System.Drawing.Point(13, 127);
+            this.labelAlertFromText.Name = "labelAlertFromText";
+            this.labelAlertFromText.Size = new System.Drawing.Size(103, 13);
+            this.labelAlertFromText.TabIndex = 0;
+            this.labelAlertFromText.Text = "Permitidas desde las";
             // 
-            // label4
+            // textBoxAlertFromHH
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(209, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(22, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "HS";
+            this.textBoxAlertFromHH.Location = new System.Drawing.Point(128, 124);
+            this.textBoxAlertFromHH.Name = "textBoxAlertFromHH";
+            this.textBoxAlertFromHH.Size = new System.Drawing.Size(31, 20);
+            this.textBoxAlertFromHH.TabIndex = 9;
+            this.textBoxAlertFromHH.TextChanged += new System.EventHandler(this.textBoxAlertFromHH_TextChanged);
             // 
-            // label5
+            // checkBoxShortAlertAct
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 77);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Notificación CORTA cada";
+            this.checkBoxShortAlertAct.AutoSize = true;
+            this.checkBoxShortAlertAct.Location = new System.Drawing.Point(16, 76);
+            this.checkBoxShortAlertAct.Name = "checkBoxShortAlertAct";
+            this.checkBoxShortAlertAct.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxShortAlertAct.TabIndex = 7;
+            this.checkBoxShortAlertAct.UseVisualStyleBackColor = true;
+            this.checkBoxShortAlertAct.CheckedChanged += new System.EventHandler(this.checkBoxShortAlertAct_CheckedChanged);
             // 
-            // textBox2
+            // checkBoxLongAlertAct
             // 
-            this.textBox2.Location = new System.Drawing.Point(173, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(31, 20);
-            this.textBox2.TabIndex = 7;
+            this.checkBoxLongAlertAct.AutoSize = true;
+            this.checkBoxLongAlertAct.Location = new System.Drawing.Point(16, 36);
+            this.checkBoxLongAlertAct.Name = "checkBoxLongAlertAct";
+            this.checkBoxLongAlertAct.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxLongAlertAct.TabIndex = 5;
+            this.checkBoxLongAlertAct.UseVisualStyleBackColor = true;
+            this.checkBoxLongAlertAct.CheckedChanged += new System.EventHandler(this.checkBoxLongAlertAct_CheckedChanged);
             // 
-            // label2
+            // labelShortAlertHs
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(209, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "HS";
+            this.labelShortAlertHs.AutoSize = true;
+            this.labelShortAlertHs.Location = new System.Drawing.Point(209, 77);
+            this.labelShortAlertHs.Name = "labelShortAlertHs";
+            this.labelShortAlertHs.Size = new System.Drawing.Size(22, 13);
+            this.labelShortAlertHs.TabIndex = 0;
+            this.labelShortAlertHs.Text = "HS";
             // 
-            // label3
+            // labelShortAlertText
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Notificación LARGA cada";
+            this.labelShortAlertText.AutoSize = true;
+            this.labelShortAlertText.Location = new System.Drawing.Point(36, 77);
+            this.labelShortAlertText.Name = "labelShortAlertText";
+            this.labelShortAlertText.Size = new System.Drawing.Size(130, 13);
+            this.labelShortAlertText.TabIndex = 0;
+            this.labelShortAlertText.Text = "Notificación CORTA cada";
             // 
-            // textBox1
+            // textBoxShortAlert
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(31, 20);
-            this.textBox1.TabIndex = 5;
+            this.textBoxShortAlert.Location = new System.Drawing.Point(173, 74);
+            this.textBoxShortAlert.Name = "textBoxShortAlert";
+            this.textBoxShortAlert.Size = new System.Drawing.Size(31, 20);
+            this.textBoxShortAlert.TabIndex = 8;
+            this.textBoxShortAlert.TextChanged += new System.EventHandler(this.textBoxShortAlert_TextChanged);
             // 
-            // groupBox1
+            // labelLongAlertHs
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.labelClave);
-            this.groupBox1.Controls.Add(this.textBoxUsuario);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBox1.Location = new System.Drawing.Point(16, 104);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(240, 68);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Períodos de actialización";
+            this.labelLongAlertHs.AutoSize = true;
+            this.labelLongAlertHs.Location = new System.Drawing.Point(209, 36);
+            this.labelLongAlertHs.Name = "labelLongAlertHs";
+            this.labelLongAlertHs.Size = new System.Drawing.Size(22, 13);
+            this.labelLongAlertHs.TabIndex = 0;
+            this.labelLongAlertHs.Text = "HS";
             // 
-            // label1
+            // labelLongAlertText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(191, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "HS";
+            this.labelLongAlertText.AutoSize = true;
+            this.labelLongAlertText.Location = new System.Drawing.Point(36, 36);
+            this.labelLongAlertText.Name = "labelLongAlertText";
+            this.labelLongAlertText.Size = new System.Drawing.Size(129, 13);
+            this.labelLongAlertText.TabIndex = 0;
+            this.labelLongAlertText.Text = "Notificación LARGA cada";
             // 
-            // labelClave
+            // textBoxLongAlert
             // 
-            this.labelClave.AutoSize = true;
-            this.labelClave.Location = new System.Drawing.Point(13, 31);
-            this.labelClave.Name = "labelClave";
-            this.labelClave.Size = new System.Drawing.Size(137, 13);
-            this.labelClave.TabIndex = 0;
-            this.labelClave.Text = "Actualizar información cada";
+            this.textBoxLongAlert.Location = new System.Drawing.Point(173, 33);
+            this.textBoxLongAlert.Name = "textBoxLongAlert";
+            this.textBoxLongAlert.Size = new System.Drawing.Size(31, 20);
+            this.textBoxLongAlert.TabIndex = 6;
+            this.textBoxLongAlert.TextChanged += new System.EventHandler(this.textBoxLongAlert_TextChanged);
             // 
-            // textBoxUsuario
+            // groupBoxUpdate
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(155, 28);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(31, 20);
-            this.textBoxUsuario.TabIndex = 3;
+            this.groupBoxUpdate.Controls.Add(this.labelUpdateHs);
+            this.groupBoxUpdate.Controls.Add(this.labelUpdateText);
+            this.groupBoxUpdate.Controls.Add(this.textBoxUpdate);
+            this.groupBoxUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.groupBoxUpdate.Location = new System.Drawing.Point(16, 153);
+            this.groupBoxUpdate.Name = "groupBoxUpdate";
+            this.groupBoxUpdate.Size = new System.Drawing.Size(240, 68);
+            this.groupBoxUpdate.TabIndex = 0;
+            this.groupBoxUpdate.TabStop = false;
+            this.groupBoxUpdate.Text = "Períodos de actialización";
             // 
-            // checkBoxMaster
+            // labelUpdateHs
             // 
-            this.checkBoxMaster.AutoSize = true;
-            this.checkBoxMaster.Location = new System.Drawing.Point(16, 35);
-            this.checkBoxMaster.Name = "checkBoxMaster";
-            this.checkBoxMaster.Size = new System.Drawing.Size(93, 17);
-            this.checkBoxMaster.TabIndex = 1;
-            this.checkBoxMaster.Text = "GPS Activado";
-            this.checkBoxMaster.UseVisualStyleBackColor = true;
+            this.labelUpdateHs.AutoSize = true;
+            this.labelUpdateHs.Location = new System.Drawing.Point(191, 31);
+            this.labelUpdateHs.Name = "labelUpdateHs";
+            this.labelUpdateHs.Size = new System.Drawing.Size(22, 13);
+            this.labelUpdateHs.TabIndex = 0;
+            this.labelUpdateHs.Text = "HS";
+            // 
+            // labelUpdateText
+            // 
+            this.labelUpdateText.AutoSize = true;
+            this.labelUpdateText.Location = new System.Drawing.Point(13, 31);
+            this.labelUpdateText.Name = "labelUpdateText";
+            this.labelUpdateText.Size = new System.Drawing.Size(137, 13);
+            this.labelUpdateText.TabIndex = 0;
+            this.labelUpdateText.Text = "Actualizar información cada";
+            // 
+            // textBoxUpdate
+            // 
+            this.textBoxUpdate.Location = new System.Drawing.Point(155, 28);
+            this.textBoxUpdate.Name = "textBoxUpdate";
+            this.textBoxUpdate.Size = new System.Drawing.Size(31, 20);
+            this.textBoxUpdate.TabIndex = 4;
+            this.textBoxUpdate.TextChanged += new System.EventHandler(this.textBoxUpdate_TextChanged);
+            // 
+            // checkBoxGPS
+            // 
+            this.checkBoxGPS.AutoSize = true;
+            this.checkBoxGPS.Location = new System.Drawing.Point(16, 29);
+            this.checkBoxGPS.Name = "checkBoxGPS";
+            this.checkBoxGPS.Size = new System.Drawing.Size(93, 17);
+            this.checkBoxGPS.TabIndex = 1;
+            this.checkBoxGPS.Text = "GPS Activado";
+            this.checkBoxGPS.UseVisualStyleBackColor = true;
+            this.checkBoxGPS.CheckedChanged += new System.EventHandler(this.checkBoxGPS_CheckedChanged);
+            // 
+            // buttonUpLoad
+            // 
+            this.buttonUpLoad.Location = new System.Drawing.Point(32, 500);
+            this.buttonUpLoad.Name = "buttonUpLoad";
+            this.buttonUpLoad.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpLoad.TabIndex = 99;
+            this.buttonUpLoad.Text = "Actualizar";
+            this.buttonUpLoad.UseVisualStyleBackColor = true;
+            this.buttonUpLoad.Click += new System.EventHandler(this.buttonUpLoad_Click);
             // 
             // ConfiguracionInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(343, 503);
+            this.ClientSize = new System.Drawing.Size(343, 535);
+            this.Controls.Add(this.buttonUpLoad);
             this.Controls.Add(this.buttonAlmacenar);
             this.Controls.Add(this.groupBoxDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -337,12 +401,16 @@
             this.MinimizeBox = false;
             this.Name = "ConfiguracionInicial";
             this.Text = "Configuración Inicial de App";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConfiguracionInicial_FormClosing);
+            this.Load += new System.EventHandler(this.ConfiguracionInicial_Load);
             this.groupBoxDatos.ResumeLayout(false);
             this.groupBoxDatos.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupLang.ResumeLayout(false);
+            this.groupLang.PerformLayout();
+            this.groupBoxAlert.ResumeLayout(false);
+            this.groupBoxAlert.PerformLayout();
+            this.groupBoxUpdate.ResumeLayout(false);
+            this.groupBoxUpdate.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -351,30 +419,34 @@
 
         private System.Windows.Forms.Button buttonAlmacenar;
         private System.Windows.Forms.GroupBox groupBoxDatos;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelClave;
-        private System.Windows.Forms.TextBox textBoxUsuario;
-        private System.Windows.Forms.CheckBox checkBoxMaster;
+        private System.Windows.Forms.CheckBox checkBoxSound;
+        private System.Windows.Forms.GroupBox groupBoxAlert;
+        private System.Windows.Forms.Label labelAlertFromSep;
+        private System.Windows.Forms.Label labelAlertToSep;
+        private System.Windows.Forms.TextBox textBoxAlertToMM;
+        private System.Windows.Forms.TextBox textBoxAlertFromMM;
+        private System.Windows.Forms.Label labelAlertToHs;
+        private System.Windows.Forms.Label labelAlertToText;
+        private System.Windows.Forms.TextBox textBoxAlertToHH;
+        private System.Windows.Forms.Label labelAlertFromHs;
+        private System.Windows.Forms.Label labelAlertFromText;
+        private System.Windows.Forms.TextBox textBoxAlertFromHH;
+        private System.Windows.Forms.CheckBox checkBoxShortAlertAct;
+        private System.Windows.Forms.CheckBox checkBoxLongAlertAct;
+        private System.Windows.Forms.Label labelShortAlertHs;
+        private System.Windows.Forms.Label labelShortAlertText;
+        private System.Windows.Forms.TextBox textBoxShortAlert;
+        private System.Windows.Forms.Label labelLongAlertHs;
+        private System.Windows.Forms.Label labelLongAlertText;
+        private System.Windows.Forms.TextBox textBoxLongAlert;
+        private System.Windows.Forms.GroupBox groupBoxUpdate;
+        private System.Windows.Forms.Label labelUpdateHs;
+        private System.Windows.Forms.Label labelUpdateText;
+        private System.Windows.Forms.TextBox textBoxUpdate;
+        private System.Windows.Forms.CheckBox checkBoxGPS;
+        private System.Windows.Forms.GroupBox groupLang;
+        private System.Windows.Forms.ComboBox comboBoxLang;
+        private System.Windows.Forms.Label labelLangText;
+        private System.Windows.Forms.Button buttonUpLoad;
     }
 }

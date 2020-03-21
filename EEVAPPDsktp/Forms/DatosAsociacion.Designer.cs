@@ -56,6 +56,7 @@
             this.labelTelefono = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.labelNombre = new System.Windows.Forms.Label();
+            this.buttonUpLoad = new System.Windows.Forms.Button();
             this.groupBoxDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProvincias)).BeginInit();
@@ -307,12 +308,23 @@
             this.labelNombre.TabIndex = 0;
             this.labelNombre.Text = "Nombre";
             // 
+            // buttonUpLoad
+            // 
+            this.buttonUpLoad.Location = new System.Drawing.Point(36, 461);
+            this.buttonUpLoad.Name = "buttonUpLoad";
+            this.buttonUpLoad.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpLoad.TabIndex = 99;
+            this.buttonUpLoad.Text = "Actualizar";
+            this.buttonUpLoad.UseVisualStyleBackColor = true;
+            this.buttonUpLoad.Click += new System.EventHandler(this.buttonUpLoad_Click);
+            // 
             // DatosAsociacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(958, 505);
+            this.Controls.Add(this.buttonUpLoad);
             this.Controls.Add(this.buttonAlmacenar);
             this.Controls.Add(this.groupBoxDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -359,5 +371,6 @@
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.BindingSource bindingSourceComunidades;
         private System.Windows.Forms.BindingSource bindingSourceProvincias;
+        private System.Windows.Forms.Button buttonUpLoad;
     }
 }

@@ -25,14 +25,13 @@ namespace EEVAPPDsktp.Forms
     public partial class DatosAsociacion : Form
     {
         public bool isModified = false;
-        public const string FILE_DATA = "AsociationData.json";
-        public const string FILE_PATH = @"..\..\JsonFiles\";
 
         public DatosAsociacion()
         {
             InitializeComponent();
         }
 
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ONLOAD
         private void DatosAsociacion_Load(object sender, EventArgs e)
         {
             // control si tiene acceso a ver/modificar formulario
@@ -60,10 +59,10 @@ namespace EEVAPPDsktp.Forms
             bindingSourceComunidades.DataSource = DBAccess.ComunidadesORM.SelectAllEntidades();
             bindingSourceProvincias.DataSource = ((CCAA)comboBoxComunidad.SelectedItem).PROVINCIAS.ToList();
             // si existe JSON
-            if ( File.Exists( FILE_PATH + FILE_DATA ) )
+            if ( File.Exists( Publica.FILE_PATH + Publica.FILE_DATA ) )
             {
                 // Lee Archivo JSON
-                JObject jsonentidad = JObject.Parse( File.ReadAllText( FILE_PATH + FILE_DATA ) );
+                JObject jsonentidad = JObject.Parse( File.ReadAllText( Publica.FILE_PATH + Publica.FILE_DATA ) );
                 entidad = jsonentidad.ToObject<AsociationDataes>();
                 // Asigna datos a formulario
                 textBoxNombre.Text = entidad.m_Nombre;
@@ -78,6 +77,7 @@ namespace EEVAPPDsktp.Forms
                 textBoxWeb.Text = entidad.m_Web;
                 textBoxRGPD.Text = entidad.m_RGPD;
             }
+            isModified = false;
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - DATOS FORM a ENTIDAD
@@ -106,20 +106,15 @@ namespace EEVAPPDsktp.Forms
         private void almacenarDatosEntidad()
         {
             AsociationDataes entidad = asignDataFormToEntity();
-            String mnsj = "";
             if (entidad != null) {
                 JObject jsonentidad = (JObject)JToken.FromObject(entidad);
-                StreamWriter fichero = File.CreateText( FILE_PATH + FILE_DATA );
+                StreamWriter fichero = File.CreateText( Publica.FILE_PATH + Publica.FILE_DATA );
                 JsonTextWriter jsonwriter = new JsonTextWriter(fichero);
                 jsonentidad.WriteTo(jsonwriter);
                 jsonwriter.Close();
+                MessageBox.Show("Datos almacenados correctamente...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else {
-                mnsj = "Entidad vacía (nulo)";
-            }
-            // Si existe un error se genera mensaje
-            if (!mnsj.Equals("")) { MessageBox.Show(mnsj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            else { MessageBox.Show("Datos almacenados correctamente...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            else { MessageBox.Show("Entidad vacía (nulo)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);  }
             isModified = false;
         }
 
@@ -128,7 +123,6 @@ namespace EEVAPPDsktp.Forms
         {
             if (isModified)
             {
-                AsociationDataes entidad = asignDataFormToEntity();
                 String mnsj = "Se ha modificado contenido y no ha sido grabado, desea guardar la información ??";
                 DialogResult isOK = MessageBox.Show(mnsj, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (isOK == DialogResult.Yes) { almacenarDatosEntidad(); }
@@ -154,6 +148,19 @@ namespace EEVAPPDsktp.Forms
         private void textBoxEmail_TextChanged(object sender, EventArgs e) { isModified = true; }
         private void textBoxWeb_TextChanged(object sender, EventArgs e) { isModified = true; }
         private void textBoxRGPD_TextChanged(object sender, EventArgs e) { isModified = true; }
+
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - UPLOAD METHOD
+        private void buttonUpLoad_Click(object sender, EventArgs e)
+        {
+            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+            // Evento para publicacion de informacion en servidor, se puede realizar de forma automatica pero se deja asi de momento para desarrollarlo mas tarde
+            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+        }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     }

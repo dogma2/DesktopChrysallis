@@ -8,6 +8,11 @@ namespace EEVAPPDsktp.Classes
 {
     public static class Publica
     {
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CONSTANTES PUBLICAS
+        public const string FILE_PATH = @"..\..\JsonFiles\";
+        public const string FILE_DATA = "AsociationData.json";
+        public const string FILE_DAPP = "DeviceAppDefaultData.json";
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ATRIBUTOS PUBLICOS
         public static string superadmin = "SuperAdmin";
         public static string superclave = "P!nt@lo20#20";
         public static string usuario = "";

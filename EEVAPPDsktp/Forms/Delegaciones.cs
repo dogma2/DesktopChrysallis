@@ -29,6 +29,7 @@ namespace EEVAPPDsktp.Forms
             InitializeComponent();
         }
 
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ONLOAD
         private void Delegaciones_Load(object sender, EventArgs e)
         {
             // control si tiene acceso a ver/modificar formulario

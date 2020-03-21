@@ -83,6 +83,7 @@
       <DependentUpon>ModelEevapp.tt</DependentUpon>
     </Compile>
     <Compile Include="Classes\AsociationDataes.cs" />
+    <Compile Include="Classes\DeviceAppDataes.cs" />
     <Compile Include="Classes\Publica.cs" />
     <Compile Include="DATOSINTERES.cs">
       <DependentUpon>ModelEevapp.tt</DependentUpon>
