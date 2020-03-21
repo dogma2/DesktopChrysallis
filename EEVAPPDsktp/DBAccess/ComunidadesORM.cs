@@ -11,10 +11,21 @@ namespace EEVAPPDsktp.DBAccess
         // - - - - - retorna LISTA de entidades
         public static List<CCAA> SelectAllEntidades()
         {
-            List<CCAA> _entidades = (from e in DBAccess.ORM.dbe.CCAA
-                                     orderby e.nombre
-                                             select e
-                                          ).ToList();
+            List<CCAA> _entidades = (   from e in DBAccess.ORM.dbe.CCAA
+                                        orderby e.nombre
+                                        select e
+                                        ).ToList();
+            return _entidades;
+        }
+
+        // - - - - - retorna LISTA de entidades por ID
+        public static List<CCAA> SelectById(int id)
+        {
+            List<CCAA> _entidades = (   from e in DBAccess.ORM.dbe.CCAA
+                                        orderby e.nombre
+                                        where e.id.Equals(id)
+                                        select e
+                                        ).ToList();
             return _entidades;
         }
 

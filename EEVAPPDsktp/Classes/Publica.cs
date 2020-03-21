@@ -14,5 +14,6 @@ namespace EEVAPPDsktp.Classes
         public static int idusuario = 0;
         public static int iddelegacion = 0;
         public static bool master = false;
+        public static byte idccaa = 0;
     }
 }

@@ -18,6 +18,16 @@ namespace EEVAPPDsktp.DBAccess
             return _entidades;
         }
 
+        // - - - - - retorna LISTA de entidades por ID
+        public static List<IDIOMAS> SelectById(int id)
+        {
+            List<IDIOMAS> _entidades = (from e in DBAccess.ORM.dbe.IDIOMAS
+                                        where e.id.Equals(id)
+                                           select e
+                                            ).ToList();
+            return _entidades;
+        }
+
         // - - - - - INSERTA una entidad el la tabla
         public static string InsertaEntidad(IDIOMAS entidad)
         {

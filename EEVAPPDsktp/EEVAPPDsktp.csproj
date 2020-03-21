@@ -91,7 +91,7 @@
     <Compile Include="DBAccess\ComunidadesORM.cs" />
     <Compile Include="DBAccess\DatosInteresORM.cs" />
     <Compile Include="DBAccess\DelegacionesORM.cs" />
-    <Compile Include="DBAccess\Eventos.cs" />
+    <Compile Include="DBAccess\EventosORM.cs" />
     <Compile Include="DBAccess\IdiomasORM.cs" />
     <Compile Include="DBAccess\ORM.cs" />
     <Compile Include="DBAccess\ProvinciasORM.cs" />

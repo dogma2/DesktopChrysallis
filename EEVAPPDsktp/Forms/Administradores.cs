@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EEVAPPDsktp.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,10 +83,20 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - DATOS ENTIDAD a FORM
         private void loadListsDataToForm()
         {
-            bindingSourceAdministradores.DataSource = DBAccess.AdministradoresORM.SelectAllEntidades();
-            bindingSourceDelegaciones.DataSource = DBAccess.DelegacionesORM.SelectAllEntidades();
-            bindingSourceComunidades.DataSource = DBAccess.ComunidadesORM.SelectAllEntidades();
-            bindingSourceProvincias.DataSource = ((CCAA)comboBoxComunidad.SelectedItem).PROVINCIAS.ToList();
+            if (Publica.master)
+            {
+                bindingSourceAdministradores.DataSource = DBAccess.AdministradoresORM.SelectAllEntidades();
+                bindingSourceDelegaciones.DataSource = DBAccess.DelegacionesORM.SelectAllEntidades();
+                bindingSourceComunidades.DataSource = DBAccess.ComunidadesORM.SelectAllEntidades();
+                bindingSourceProvincias.DataSource = ((CCAA)comboBoxComunidad.SelectedItem).PROVINCIAS.ToList();
+            }
+            else {
+                bindingSourceAdministradores.DataSource = DBAccess.AdministradoresORM.SelectByDelegacion(Publica.iddelegacion);
+                bindingSourceDelegaciones.DataSource = DBAccess.DelegacionesORM.SelectById(Publica.iddelegacion);
+                bindingSourceComunidades.DataSource = DBAccess.ComunidadesORM.SelectAllEntidades();
+                if (Publica.idccaa != null && Publica.idccaa > 0) { comboBoxComunidad.SelectedValue = Publica.idccaa; }
+                bindingSourceProvincias.DataSource = ((CCAA)comboBoxComunidad.SelectedItem).PROVINCIAS.ToList();
+            }
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - DATOS ENTIDAD a FORM

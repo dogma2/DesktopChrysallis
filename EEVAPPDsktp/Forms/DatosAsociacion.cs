@@ -35,7 +35,12 @@ namespace EEVAPPDsktp.Forms
 
         private void DatosAsociacion_Load(object sender, EventArgs e)
         {
-            loadDataToForm();
+            // control si tiene acceso a ver/modificar formulario
+            if (!Publica.master) {
+                MessageBox.Show("No tiene autorizacion para acceder a esta opcion.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                this.Close();
+            }
+            else { loadDataToForm();  }
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - BOTON ALMACENAR
@@ -91,6 +96,9 @@ namespace EEVAPPDsktp.Forms
             entidad.m_Email = textBoxEmail.Text;
             entidad.m_Web = textBoxWeb.Text;
             entidad.m_RGPD = textBoxRGPD.Text;
+            entidad.m_UserModif = Publica.usuario;
+            DateTime nowmismo = DateTime.Now;
+            entidad.m_LastModif = new int[] {nowmismo.Year, nowmismo.Month, nowmismo.Day, nowmismo.Hour, nowmismo.Minute, nowmismo.Second};
             return entidad;
         }
 
@@ -105,7 +113,6 @@ namespace EEVAPPDsktp.Forms
                 JsonTextWriter jsonwriter = new JsonTextWriter(fichero);
                 jsonentidad.WriteTo(jsonwriter);
                 jsonwriter.Close();
-                isModified = false;
             }
             else {
                 mnsj = "Entidad vacía (nulo)";
@@ -113,7 +120,7 @@ namespace EEVAPPDsktp.Forms
             // Si existe un error se genera mensaje
             if (!mnsj.Equals("")) { MessageBox.Show(mnsj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else { MessageBox.Show("Datos almacenados correctamente...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            
+            isModified = false;
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CONTROL on EXIT WITHOUT SAVE

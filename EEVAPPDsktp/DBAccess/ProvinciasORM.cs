@@ -18,6 +18,27 @@ namespace EEVAPPDsktp.DBAccess
             return _entidades;
         }
 
+        // - - - - - retorna LISTA de entidades por ID
+        public static List<PROVINCIAS> SelectById(int id)
+        {
+            List<PROVINCIAS> _entidades = ( from e in DBAccess.ORM.dbe.PROVINCIAS
+                                            where e.id.Equals(id)
+                                            select e
+                                            ).ToList();
+            return _entidades;
+        }
+
+        // - - - - - retorna LISTA de entidades
+        public static List<PROVINCIAS> SelectByCCAA(int idccaa)
+        {
+            List<PROVINCIAS> _entidades = ( from e in DBAccess.ORM.dbe.PROVINCIAS
+                                            orderby e.nombre
+                                            where e.idccaa.Equals(idccaa)
+                                            select e
+                                            ).ToList();
+            return _entidades;
+        }
+
         // - - - - - INSERTA una entidad el la tabla
         public static string InsertaEntidad(PROVINCIAS entidad)
         {

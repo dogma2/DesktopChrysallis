@@ -11,8 +11,29 @@ namespace EEVAPPDsktp.DBAccess
         // - - - - - retorna LISTA de entidades
         public static List<DATOSINTERES> SelectAllEntidades()
         {
+            List<DATOSINTERES> _entidades = (   from e in DBAccess.ORM.dbe.DATOSINTERES
+                                                orderby e.nombre
+                                                select e
+                                                ).ToList();
+            return _entidades;
+        }
+
+        // - - - - - retorna LISTA de entidades por ID
+        public static List<DATOSINTERES> SelectById(int id)
+        {
+            List<DATOSINTERES> _entidades = (   from e in DBAccess.ORM.dbe.DATOSINTERES
+                                                where e.id.Equals(id)
+                                                select e
+                                                ).ToList();
+            return _entidades;
+        }
+
+        // - - - - - retorna LISTA de entidades por DELEGACIONES
+        public static List<DATOSINTERES> SelectByDelegacion(int iddelegacion)
+        {
             List<DATOSINTERES> _entidades = (from e in DBAccess.ORM.dbe.DATOSINTERES
                                              orderby e.nombre
+                                             where e.iddelegacion.Equals(iddelegacion)
                                              select e
                                           ).ToList();
             return _entidades;

@@ -11,10 +11,20 @@ namespace EEVAPPDsktp.DBAccess
         // - - - - - retorna LISTA de entidades
         public static List<DELEGACIONES> SelectAllEntidades()
         {
-            List<DELEGACIONES> _entidades = (from e in DBAccess.ORM.dbe.DELEGACIONES
-                                      orderby e.nombre
-                                      select e
-                                          ).ToList();
+            List<DELEGACIONES> _entidades = (   from e in DBAccess.ORM.dbe.DELEGACIONES
+                                                orderby e.nombre
+                                                select e
+                                                ).ToList();
+            return _entidades;
+        }
+
+        // - - - - - retorna LISTA de entidades por ID
+        public static List<DELEGACIONES> SelectById(int id)
+        {
+            List<DELEGACIONES> _entidades = (   from e in DBAccess.ORM.dbe.DELEGACIONES
+                                                where e.id.Equals(id)
+                                                select e
+                                                ).ToList();
             return _entidades;
         }
 

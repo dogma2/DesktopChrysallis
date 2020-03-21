@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace EEVAPPDsktp.DBAccess
 {
-    public static class UsuariosORM
+    public static class EventosORM
     {
         // - - - - - retorna LISTA de entidades
-        public static List<USUARIOS> SelectAllEntidades()
+        public static List<EVENTOS> SelectAllEntidades()
         {
-            List<USUARIOS> _entidades = (   from e in DBAccess.ORM.dbe.USUARIOS
-                                            orderby e.email
+            List<EVENTOS> _entidades = (    from e in DBAccess.ORM.dbe.EVENTOS
+                                            orderby e.titulo
                                             select e
                                             ).ToList();
             return _entidades;
         }
 
         // - - - - - retorna LISTA de entidades por ID
-        public static List<USUARIOS> SelectById(int id)
+        public static List<EVENTOS> SelectById(int id)
         {
-            List<USUARIOS> _entidades = (   from e in DBAccess.ORM.dbe.USUARIOS
+            List<EVENTOS> _entidades = (    from e in DBAccess.ORM.dbe.EVENTOS
                                             where e.id.Equals(id)
                                             select e
                                             ).ToList();
@@ -29,10 +29,10 @@ namespace EEVAPPDsktp.DBAccess
         }
 
         // - - - - - retorna LISTA de entidades por DELEGACIONES
-        public static List<USUARIOS> SelectByDelegacion(int iddelegacion)
+        public static List<EVENTOS> SelectByDelegacion(int iddelegacion)
         {
-            List<USUARIOS> _entidades = (   from e in DBAccess.ORM.dbe.USUARIOS
-                                            orderby e.email
+            List<EVENTOS> _entidades = (    from e in DBAccess.ORM.dbe.EVENTOS
+                                            orderby e.titulo
                                             where e.iddelegacion.Equals(iddelegacion)
                                             select e
                                             ).ToList();
@@ -40,24 +40,24 @@ namespace EEVAPPDsktp.DBAccess
         }
 
         // - - - - - INSERTA una entidad el la tabla
-        public static string InsertaEntidad(USUARIOS entidad)
+        public static string InsertaEntidad(EVENTOS entidad)
         {
-            ORM.dbe.USUARIOS.Add(entidad);
+            ORM.dbe.EVENTOS.Add(entidad);
             return DBAccess.ORM.SaveChanges();
         }
 
         // - - - - - MODIFICA una entidad el la tabla
-        public static string ModificaEntidad(USUARIOS entidad)
+        public static string ModificaEntidad(EVENTOS entidad)
         {
-            USUARIOS e = DBAccess.ORM.dbe.USUARIOS.Find(entidad.id);
+            EVENTOS e = DBAccess.ORM.dbe.EVENTOS.Find(entidad.id);
             e = entidad;
             return DBAccess.ORM.SaveChanges();
         }
 
         // - - - - - ELIMINA una entidad de la tabla
-        public static string DeleteEntidad(USUARIOS entidad)
+        public static string DeleteEntidad(EVENTOS entidad)
         {
-            ORM.dbe.USUARIOS.Remove(entidad);
+            ORM.dbe.EVENTOS.Remove(entidad);
             return DBAccess.ORM.SaveChanges();
         }
     }

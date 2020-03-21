@@ -11,10 +11,31 @@ namespace EEVAPPDsktp.DBAccess
         // - - - - - retorna LISTA de entidades
         public static List<DSKTUSERS> SelectAllEntidades()
         {
-            List<DSKTUSERS> _entidades = (from e in DBAccess.ORM.dbe.DSKTUSERS
-                                          orderby e.nickname
-                                             select e
-                                          ).ToList();
+            List<DSKTUSERS> _entidades = (  from e in DBAccess.ORM.dbe.DSKTUSERS
+                                            orderby e.nickname
+                                            select e
+                                            ).ToList();
+            return _entidades;
+        }
+
+        // - - - - - retorna LISTA de entidades por ID
+        public static List<DSKTUSERS> SelectById(int id)
+        {
+            List<DSKTUSERS> _entidades = (  from e in DBAccess.ORM.dbe.DSKTUSERS
+                                            where e.id.Equals(id)
+                                            select e
+                                            ).ToList();
+            return _entidades;
+        }
+
+        // - - - - - retorna LISTA de entidades por DELEGACIONES
+        public static List<DSKTUSERS> SelectByDelegacion(int iddelegacion)
+        {
+            List<DSKTUSERS> _entidades = (  from e in DBAccess.ORM.dbe.DSKTUSERS
+                                            orderby e.nickname
+                                            where e.iddelegacion.Equals(iddelegacion)
+                                            select e
+                                            ).ToList();
             return _entidades;
         }
 
