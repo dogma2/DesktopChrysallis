@@ -185,6 +185,7 @@
             // 
             // comboBoxDelegacion
             // 
+            this.comboBoxDelegacion.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bindingSourceDelegaciones, "id", true));
             this.comboBoxDelegacion.DataSource = this.bindingSourceDelegaciones;
             this.comboBoxDelegacion.DisplayMember = "nombre";
             this.comboBoxDelegacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

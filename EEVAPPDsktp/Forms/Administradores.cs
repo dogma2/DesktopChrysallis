@@ -8,6 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// EEVAPP Project - Administradores: gestiona datos de Administradores en BBDD
+// PROYECTO - 2º Proyecto DAM2T
+// DOGMA2 - 21/03/2020 - CEP
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// More Data
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 namespace EEVAPPDsktp.Forms
 {
     public partial class Administradores : Form
@@ -64,17 +72,7 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - BOTON ALMACENAR
         private void buttonAlmacenar_Click(object sender, EventArgs e)
         {
-            DSKTUSERS entidad = asignDataFormToEntity();
-            if (controlEntityData(entidad))
-            {
-                String mnsj;
-                if (isNew) { mnsj = DBAccess.AdministradoresORM.InsertaEntidad(entidad); }
-                else { mnsj = DBAccess.AdministradoresORM.ModificaEntidad(entidad); }
-                // Si existe un error se genera mensaje
-                if (!mnsj.Equals("")) { MessageBox.Show(mnsj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                else { loadListsDataToForm(); }
-            }
-            isModified = false;
+            almacenarDatosEntidad();
             loadInitialSelectedData();
         }
 
@@ -138,7 +136,8 @@ namespace EEVAPPDsktp.Forms
                     bindingSourceProvincias.DataSource = ((CCAA)comboBoxComunidad.SelectedItem).PROVINCIAS.ToList();
 
                 }
-                comboBoxDelegacion.SelectedValue = entidad.iddelegacion;
+                if (entidad.iddelegacion > 0) { comboBoxDelegacion.SelectedValue = entidad.iddelegacion; }
+                else { comboBoxDelegacion.SelectedIndex = 0; }
                 if (entidad.ctrlmaster == 1) { checkBoxMaster.Checked = true; }
                 else { checkBoxMaster.Checked = false; }
             }
@@ -175,8 +174,9 @@ namespace EEVAPPDsktp.Forms
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ALMACENAR DATOS ENTIDAD
-        private void almacenarDatosEntidad(DSKTUSERS entidad)
+        private void almacenarDatosEntidad()
         {
+            DSKTUSERS entidad = asignDataFormToEntity();
             if (controlEntityData(entidad))
             {
                 String mnsj;
@@ -184,8 +184,9 @@ namespace EEVAPPDsktp.Forms
                 else { mnsj = DBAccess.AdministradoresORM.ModificaEntidad(entidad); }
                 // Si existe un error se genera mensaje
                 if (!mnsj.Equals("")) { MessageBox.Show(mnsj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                else { loadListsDataToForm(); }
+                else { MessageBox.Show("Datos almacenados correctamente...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);  loadListsDataToForm(); }
             }
+            isModified = false;
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CONTROL DATOS ENTIDAD
@@ -210,7 +211,7 @@ namespace EEVAPPDsktp.Forms
                 DSKTUSERS entidad = asignDataFormToEntity();
                 String mnsj = "Se ha modificado contenido y no ha sido grabado, desea guardar la información ??";
                 DialogResult isOK = MessageBox.Show(mnsj, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (isOK == DialogResult.Yes) { almacenarDatosEntidad(entidad); }
+                if (isOK == DialogResult.Yes) { almacenarDatosEntidad(); }
             }
         }
 

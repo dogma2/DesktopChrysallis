@@ -9,6 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// EEVAPP Project - Delegaciones: gestiona datos de Delegaciones en BBDD
+// PROYECTO - 2º Proyecto DAM2T
+// DOGMA2 - 21/03/2020 - CEP
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// More Data
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 namespace EEVAPPDsktp.Forms
 {
     public partial class Delegaciones : Form
@@ -65,17 +73,7 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - BOTON ALMACENAR
         private void buttonAlmacenar_Click(object sender, EventArgs e)
         {
-            DELEGACIONES entidad = asignDataFormToEntity();
-            if (controlEntityData(entidad))
-            {
-                String mnsj;
-                if (isNew) { mnsj = DBAccess.DelegacionesORM.InsertaEntidad(entidad); }
-                else { mnsj = DBAccess.DelegacionesORM.ModificaEntidad(entidad); }
-                // Si existe un error se genera mensaje
-                if (!mnsj.Equals("")) { MessageBox.Show(mnsj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                else { loadListsDataToForm(); }
-            }
-            isModified = false;
+            almacenarDatosEntidad();
             loadInitialSelectedData();
         }
 
@@ -173,16 +171,18 @@ namespace EEVAPPDsktp.Forms
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ALMACENAR DATOS ENTIDAD
-        private void almacenarDatosEntidad(DELEGACIONES entidad)
+        private void almacenarDatosEntidad()
         {
+            DELEGACIONES entidad = asignDataFormToEntity();
             if (controlEntityData(entidad)) { 
                 String mnsj;
                 if (isNew) { mnsj = DBAccess.DelegacionesORM.InsertaEntidad(entidad); }
                 else { mnsj = DBAccess.DelegacionesORM.ModificaEntidad(entidad); }
                 // Si existe un error se genera mensaje
                 if (!mnsj.Equals("")) { MessageBox.Show(mnsj, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                else { loadListsDataToForm(); }
+                else { MessageBox.Show("Datos almacenados correctamente...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);  loadListsDataToForm(); }
             }
+            isModified = false;
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CONTROL DATOS ENTIDAD
@@ -205,7 +205,7 @@ namespace EEVAPPDsktp.Forms
                 DELEGACIONES entidad = asignDataFormToEntity();
                 String mnsj = "Se ha modificado contenido y no ha sido grabado, desea guardar la información ??";
                 DialogResult isOK = MessageBox.Show(mnsj, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (isOK == DialogResult.Yes) { almacenarDatosEntidad(entidad); }
+                if (isOK == DialogResult.Yes) { almacenarDatosEntidad(); }
             }
         }
 

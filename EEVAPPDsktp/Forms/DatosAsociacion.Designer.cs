@@ -28,17 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatosAsociacion));
             this.buttonAlmacenar = new System.Windows.Forms.Button();
             this.groupBoxDatos = new System.Windows.Forms.GroupBox();
+            this.textBoxRGPD = new System.Windows.Forms.TextBox();
+            this.labelRGPD = new System.Windows.Forms.Label();
+            this.textBoxCIF = new System.Windows.Forms.TextBox();
+            this.labelCIF = new System.Windows.Forms.Label();
             this.textBoxWeb = new System.Windows.Forms.TextBox();
             this.labelWeb = new System.Windows.Forms.Label();
             this.textBoxCodigoPostal = new System.Windows.Forms.TextBox();
             this.textBoxCiudad = new System.Windows.Forms.TextBox();
             this.labelCiudad = new System.Windows.Forms.Label();
             this.comboBoxComunidad = new System.Windows.Forms.ComboBox();
+            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
             this.labelComunidad = new System.Windows.Forms.Label();
             this.comboBoxProvincia = new System.Windows.Forms.ComboBox();
+            this.bindingSourceProvincias = new System.Windows.Forms.BindingSource(this.components);
             this.labelProvincia = new System.Windows.Forms.Label();
             this.labelCodigoPostal = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
@@ -49,11 +56,9 @@
             this.labelTelefono = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.labelNombre = new System.Windows.Forms.Label();
-            this.textBoxCIF = new System.Windows.Forms.TextBox();
-            this.labelCIF = new System.Windows.Forms.Label();
-            this.textBoxRGPD = new System.Windows.Forms.TextBox();
-            this.labelRGPD = new System.Windows.Forms.Label();
             this.groupBoxDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProvincias)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonAlmacenar
@@ -64,6 +69,7 @@
             this.buttonAlmacenar.TabIndex = 102;
             this.buttonAlmacenar.Text = "Almacenar";
             this.buttonAlmacenar.UseVisualStyleBackColor = true;
+            this.buttonAlmacenar.Click += new System.EventHandler(this.buttonAlmacenar_Click);
             // 
             // groupBoxDatos
             // 
@@ -97,12 +103,48 @@
             this.groupBoxDatos.TabStop = false;
             this.groupBoxDatos.Text = "Datos Asociación";
             // 
+            // textBoxRGPD
+            // 
+            this.textBoxRGPD.Location = new System.Drawing.Point(455, 49);
+            this.textBoxRGPD.Multiline = true;
+            this.textBoxRGPD.Name = "textBoxRGPD";
+            this.textBoxRGPD.Size = new System.Drawing.Size(420, 330);
+            this.textBoxRGPD.TabIndex = 15;
+            this.textBoxRGPD.TextChanged += new System.EventHandler(this.textBoxRGPD_TextChanged);
+            // 
+            // labelRGPD
+            // 
+            this.labelRGPD.AutoSize = true;
+            this.labelRGPD.Location = new System.Drawing.Point(452, 32);
+            this.labelRGPD.Name = "labelRGPD";
+            this.labelRGPD.Size = new System.Drawing.Size(289, 13);
+            this.labelRGPD.TabIndex = 14;
+            this.labelRGPD.Text = "Texto RGPD (Reglamento General de Proteccion de Datos)";
+            // 
+            // textBoxCIF
+            // 
+            this.textBoxCIF.Location = new System.Drawing.Point(16, 103);
+            this.textBoxCIF.Name = "textBoxCIF";
+            this.textBoxCIF.Size = new System.Drawing.Size(200, 20);
+            this.textBoxCIF.TabIndex = 13;
+            this.textBoxCIF.TextChanged += new System.EventHandler(this.textBoxCIF_TextChanged);
+            // 
+            // labelCIF
+            // 
+            this.labelCIF.AutoSize = true;
+            this.labelCIF.Location = new System.Drawing.Point(13, 86);
+            this.labelCIF.Name = "labelCIF";
+            this.labelCIF.Size = new System.Drawing.Size(23, 13);
+            this.labelCIF.TabIndex = 12;
+            this.labelCIF.Text = "CIF";
+            // 
             // textBoxWeb
             // 
             this.textBoxWeb.Location = new System.Drawing.Point(16, 359);
             this.textBoxWeb.Name = "textBoxWeb";
             this.textBoxWeb.Size = new System.Drawing.Size(420, 20);
             this.textBoxWeb.TabIndex = 11;
+            this.textBoxWeb.TextChanged += new System.EventHandler(this.textBoxWeb_TextChanged);
             // 
             // labelWeb
             // 
@@ -119,6 +161,7 @@
             this.textBoxCodigoPostal.Name = "textBoxCodigoPostal";
             this.textBoxCodigoPostal.Size = new System.Drawing.Size(100, 20);
             this.textBoxCodigoPostal.TabIndex = 7;
+            this.textBoxCodigoPostal.TextChanged += new System.EventHandler(this.textBoxCodigoPostal_TextChanged);
             // 
             // textBoxCiudad
             // 
@@ -126,6 +169,7 @@
             this.textBoxCiudad.Name = "textBoxCiudad";
             this.textBoxCiudad.Size = new System.Drawing.Size(300, 20);
             this.textBoxCiudad.TabIndex = 6;
+            this.textBoxCiudad.TextChanged += new System.EventHandler(this.textBoxCiudad_TextChanged);
             // 
             // labelCiudad
             // 
@@ -138,16 +182,24 @@
             // 
             // comboBoxComunidad
             // 
+            this.comboBoxComunidad.DataSource = this.bindingSourceComunidades;
+            this.comboBoxComunidad.DisplayMember = "nombre";
             this.comboBoxComunidad.FormattingEnabled = true;
-            this.comboBoxComunidad.Location = new System.Drawing.Point(236, 262);
+            this.comboBoxComunidad.Location = new System.Drawing.Point(16, 260);
             this.comboBoxComunidad.Name = "comboBoxComunidad";
             this.comboBoxComunidad.Size = new System.Drawing.Size(200, 21);
             this.comboBoxComunidad.TabIndex = 9;
+            this.comboBoxComunidad.ValueMember = "id";
+            this.comboBoxComunidad.SelectedIndexChanged += new System.EventHandler(this.comboBoxComunidad_SelectedIndexChanged);
+            // 
+            // bindingSourceComunidades
+            // 
+            this.bindingSourceComunidades.DataSource = typeof(EEVAPPDsktp.CCAA);
             // 
             // labelComunidad
             // 
             this.labelComunidad.AutoSize = true;
-            this.labelComunidad.Location = new System.Drawing.Point(232, 246);
+            this.labelComunidad.Location = new System.Drawing.Point(12, 244);
             this.labelComunidad.Name = "labelComunidad";
             this.labelComunidad.Size = new System.Drawing.Size(60, 13);
             this.labelComunidad.TabIndex = 0;
@@ -155,16 +207,24 @@
             // 
             // comboBoxProvincia
             // 
+            this.comboBoxProvincia.DataSource = this.bindingSourceProvincias;
+            this.comboBoxProvincia.DisplayMember = "nombre";
             this.comboBoxProvincia.FormattingEnabled = true;
-            this.comboBoxProvincia.Location = new System.Drawing.Point(16, 262);
+            this.comboBoxProvincia.Location = new System.Drawing.Point(236, 260);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
             this.comboBoxProvincia.Size = new System.Drawing.Size(200, 21);
             this.comboBoxProvincia.TabIndex = 8;
+            this.comboBoxProvincia.ValueMember = "id";
+            this.comboBoxProvincia.SelectedIndexChanged += new System.EventHandler(this.comboBoxProvincia_SelectedIndexChanged);
+            // 
+            // bindingSourceProvincias
+            // 
+            this.bindingSourceProvincias.DataSource = typeof(EEVAPPDsktp.PROVINCIAS);
             // 
             // labelProvincia
             // 
             this.labelProvincia.AutoSize = true;
-            this.labelProvincia.Location = new System.Drawing.Point(13, 246);
+            this.labelProvincia.Location = new System.Drawing.Point(233, 244);
             this.labelProvincia.Name = "labelProvincia";
             this.labelProvincia.Size = new System.Drawing.Size(51, 13);
             this.labelProvincia.TabIndex = 0;
@@ -185,6 +245,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(420, 20);
             this.textBoxEmail.TabIndex = 10;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // labelEmail
             // 
@@ -201,6 +262,7 @@
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(420, 20);
             this.textBoxDireccion.TabIndex = 5;
+            this.textBoxDireccion.TextChanged += new System.EventHandler(this.textBoxDireccion_TextChanged);
             // 
             // labelDireccion
             // 
@@ -217,6 +279,7 @@
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(200, 20);
             this.textBoxTelefono.TabIndex = 3;
+            this.textBoxTelefono.TextChanged += new System.EventHandler(this.textBoxTelefono_TextChanged);
             // 
             // labelTelefono
             // 
@@ -233,6 +296,7 @@
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(420, 20);
             this.textBoxNombre.TabIndex = 2;
+            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // labelNombre
             // 
@@ -242,39 +306,6 @@
             this.labelNombre.Size = new System.Drawing.Size(44, 13);
             this.labelNombre.TabIndex = 0;
             this.labelNombre.Text = "Nombre";
-            // 
-            // textBoxCIF
-            // 
-            this.textBoxCIF.Location = new System.Drawing.Point(16, 103);
-            this.textBoxCIF.Name = "textBoxCIF";
-            this.textBoxCIF.Size = new System.Drawing.Size(200, 20);
-            this.textBoxCIF.TabIndex = 13;
-            // 
-            // labelCIF
-            // 
-            this.labelCIF.AutoSize = true;
-            this.labelCIF.Location = new System.Drawing.Point(13, 86);
-            this.labelCIF.Name = "labelCIF";
-            this.labelCIF.Size = new System.Drawing.Size(23, 13);
-            this.labelCIF.TabIndex = 12;
-            this.labelCIF.Text = "CIF";
-            // 
-            // textBoxRGPD
-            // 
-            this.textBoxRGPD.Location = new System.Drawing.Point(455, 49);
-            this.textBoxRGPD.Multiline = true;
-            this.textBoxRGPD.Name = "textBoxRGPD";
-            this.textBoxRGPD.Size = new System.Drawing.Size(420, 330);
-            this.textBoxRGPD.TabIndex = 15;
-            // 
-            // labelRGPD
-            // 
-            this.labelRGPD.AutoSize = true;
-            this.labelRGPD.Location = new System.Drawing.Point(452, 32);
-            this.labelRGPD.Name = "labelRGPD";
-            this.labelRGPD.Size = new System.Drawing.Size(289, 13);
-            this.labelRGPD.TabIndex = 14;
-            this.labelRGPD.Text = "Texto RGPD (Reglamento General de Proteccion de Datos)";
             // 
             // DatosAsociacion
             // 
@@ -290,9 +321,12 @@
             this.MinimizeBox = false;
             this.Name = "DatosAsociacion";
             this.Text = "Datos Asociación";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DatosAsociacion_FormClosing);
             this.Load += new System.EventHandler(this.DatosAsociacion_Load);
             this.groupBoxDatos.ResumeLayout(false);
             this.groupBoxDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProvincias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -323,5 +357,7 @@
         private System.Windows.Forms.Label labelTelefono;
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.BindingSource bindingSourceComunidades;
+        private System.Windows.Forms.BindingSource bindingSourceProvincias;
     }
 }
