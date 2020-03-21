@@ -213,8 +213,14 @@
     <EmbeddedResource Include="Forms\Delegaciones.resx">
       <DependentUpon>Delegaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dogma2.resx">
+      <DependentUpon>Dogma2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\eevapp.resx">
       <DependentUpon>eevapp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProyectoEevapp.resx">
+      <DependentUpon>ProyectoEevapp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Traducciones.resx">
       <DependentUpon>Traducciones.cs</DependentUpon>
@@ -227,6 +233,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="ModelEevapp.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -259,11 +266,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="AppIcon256.ico" />
+    <None Include="Images\eevapp robot blanco y blanco fondo transparente 300dpi - copia.png" />
+    <None Include="Images\eevapplogo.png" />
     <Content Include="ModelEevapp.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelEevapp.Context.cs</LastGenOutput>
