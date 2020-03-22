@@ -152,6 +152,7 @@ namespace EEVAPPDsktp.Forms
                 if (entidad.ctrlmaster == 1) { checkBoxMaster.Checked = true; }
                 else { checkBoxMaster.Checked = false; }
             }
+            isModified = false;
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - DATOS FORM a ENTIDAD

@@ -125,10 +125,11 @@
             // 
             // textBoxId
             // 
-            this.textBoxId.Location = new System.Drawing.Point(402, 9);
+            this.textBoxId.Location = new System.Drawing.Point(443, 9);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(51, 20);
+            this.textBoxId.Size = new System.Drawing.Size(10, 20);
             this.textBoxId.TabIndex = 0;
+            this.textBoxId.Visible = false;
             // 
             // comboBoxComunidad
             // 
@@ -184,7 +185,6 @@
             // 
             // comboBoxDelegacion
             // 
-            this.comboBoxDelegacion.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bindingSourceDelegaciones, "id", true));
             this.comboBoxDelegacion.DataSource = this.bindingSourceDelegaciones;
             this.comboBoxDelegacion.DisplayMember = "nombre";
             this.comboBoxDelegacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

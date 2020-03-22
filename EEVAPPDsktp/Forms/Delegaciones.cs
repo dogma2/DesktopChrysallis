@@ -149,6 +149,7 @@ namespace EEVAPPDsktp.Forms
                 textBoxEmail.Text = entidad.email;
                 textBoxContacto.Text = entidad.contacto;
             }
+            isModified = false;
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - DATOS FORM a ENTIDAD
