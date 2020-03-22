@@ -195,6 +195,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PROVINCIAS.cs">
       <DependentUpon>ModelEevapp.tt</DependentUpon>
     </Compile>
@@ -227,14 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EntityDeploy Include="ModelEevapp.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelEevapp.Designer.cs</LastGenOutput>
@@ -269,7 +269,6 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="AppIcon256.ico" />
-    <None Include="Images\eevapp robot blanco y blanco fondo transparente 300dpi - copia.png" />
     <None Include="Images\eevapplogo.png" />
     <None Include="Images\dogma2_logobg.png" />
     <None Include="Images\magomoemoji.png" />
