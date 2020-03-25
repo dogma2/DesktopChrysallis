@@ -34,12 +34,7 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ONLOAD
         private void DatosAsociacion_Load(object sender, EventArgs e)
         {
-            // control si tiene acceso a ver/modificar formulario
-            if (!Publica.master) {
-                MessageBox.Show("No tiene autorizacion para acceder a esta opcion.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                this.Close();
-            }
-            else { loadDataToForm();  }
+            loadDataToForm();
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - BOTON ALMACENAR

@@ -173,14 +173,14 @@
             // toolStripMenuItemEevapp
             // 
             this.toolStripMenuItemEevapp.Name = "toolStripMenuItemEevapp";
-            this.toolStripMenuItemEevapp.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemEevapp.Size = new System.Drawing.Size(164, 22);
             this.toolStripMenuItemEevapp.Text = "Proyecto EEVAPP";
             this.toolStripMenuItemEevapp.Click += new System.EventHandler(this.toolStripMenuItemEevapp_Click);
             // 
             // ToolStripMenuItemDogma2
             // 
             this.ToolStripMenuItemDogma2.Name = "ToolStripMenuItemDogma2";
-            this.ToolStripMenuItemDogma2.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItemDogma2.Size = new System.Drawing.Size(164, 22);
             this.ToolStripMenuItemDogma2.Text = "Grupo DOGMA2";
             this.ToolStripMenuItemDogma2.Click += new System.EventHandler(this.ToolStripMenuItemDogma2_Click);
             // 

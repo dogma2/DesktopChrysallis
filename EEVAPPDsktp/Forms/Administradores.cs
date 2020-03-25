@@ -21,8 +21,9 @@ namespace EEVAPPDsktp.Forms
 {
     public partial class Administradores : Form
     {
-        public bool isModified = false;
+        public bool isModified;
         public bool isNew = false;
+        public bool controlPswrd;
 
         public Administradores()
         {
@@ -32,6 +33,8 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ONLOAD
         private void Administradores_Load(object sender, EventArgs e)
         {
+            // control si tiene acceso a ver/modificar formulario
+            if (!Publica.master) { checkBoxMaster.Enabled = false; }
             loadListsDataToForm();
             loadInitialSelectedData();
         }
@@ -153,6 +156,7 @@ namespace EEVAPPDsktp.Forms
                 else { checkBoxMaster.Checked = false; }
             }
             isModified = false;
+            controlPswrd = false;
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - DATOS FORM a ENTIDAD
@@ -173,7 +177,7 @@ namespace EEVAPPDsktp.Forms
             if (checkBoxActivado.Checked == true) { entidad.estado = 1; }
             else { entidad.estado = 0; }
             entidad.nickname = textBoxUsuario.Text;
-            entidad.password = textBoxClave.Text;
+            if (controlPswrd) { entidad.password = Publica.getHashString(textBoxClave.Text); controlPswrd = false; }
             entidad.nombre = textBoxNombre.Text;
             entidad.email = textBoxEmail.Text;
             entidad.idccaa = ((CCAA)comboBoxComunidad.SelectedItem).id;
@@ -229,7 +233,7 @@ namespace EEVAPPDsktp.Forms
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CONTROL EN CONTENIDO MODIFICADO
         private void textBoxUsuario_TextChanged(object sender, EventArgs e) { isModified = true; }
-        private void textBoxClave_TextChanged(object sender, EventArgs e) { isModified = true; }
+        private void textBoxClave_TextChanged(object sender, EventArgs e) { isModified = true; controlPswrd = true; }
         private void checkBoxActivado_CheckedChanged(object sender, EventArgs e) { isModified = true; }
         private void checkBoxMaster_CheckedChanged(object sender, EventArgs e) { isModified = true; }
         private void textBoxNombre_TextChanged(object sender, EventArgs e) { isModified = true; }

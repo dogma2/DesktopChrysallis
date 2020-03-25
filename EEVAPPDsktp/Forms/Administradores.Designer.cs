@@ -285,6 +285,7 @@
             // 
             this.textBoxClave.Location = new System.Drawing.Point(185, 54);
             this.textBoxClave.Name = "textBoxClave";
+            this.textBoxClave.PasswordChar = '*';
             this.textBoxClave.Size = new System.Drawing.Size(150, 20);
             this.textBoxClave.TabIndex = 3;
             this.textBoxClave.TextChanged += new System.EventHandler(this.textBoxClave_TextChanged);

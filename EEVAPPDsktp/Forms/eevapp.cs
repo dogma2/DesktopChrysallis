@@ -38,24 +38,22 @@ namespace EEVAPPDsktp
                     Publica.iddelegacion = 0;
                     Publica.master = true;
                 }
-                else
+                else 
                 {
-                    // realiza la query sobre los datos ingresados
-                    //                    if (DB.LoginQuery(textBoxUsuario.Text, textBoxClave.Text))
-                    //                    {
-                    //                        // valores OK
-                    //                    menuStripMain.Enabled = true;
-                    //                    groupBoxLogin.Visible = false;
-                    //                    Publica.usuario = "SuperAdmin";
-                    //      Publica.idusuario = 0;
-//                    Publica.iddelegacion = 0;
-//                    Publica.master = true;
+                    DSKTUSERS us = DBAccess.AdministradoresORM.LoginDsktUser(textBoxUsuario.Text, textBoxClave.Text);
+                    if ( us != null) {
 
-                    //                    }
-                    //                    else
-                    //                    {
-                    MessageBox.Show("El Usuario o Contraseña ingresados no es correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//                    }
+                        menuStripMain.Enabled = true;
+                        groupBoxLogin.Visible = false;
+                        Publica.usuario = us.nickname;
+                        Publica.idusuario = us.id;
+                        Publica.iddelegacion = us.iddelegacion;
+                        Publica.master = ((us.ctrlmaster==1)?true:false);
+                        Publica.idccaa = (byte)us.idccaa;
+
+                        }
+                    else {
+                        MessageBox.Show("El Usuario o Contraseña ingresados no es correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
             }
             else
@@ -93,8 +91,16 @@ namespace EEVAPPDsktp
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Opciones de ADMINISTRACION
         private void toolStripMenuItemDelegaciones_Click(object sender, EventArgs e)
         {
-            Delegaciones frm = new Delegaciones();
-            frm.ShowDialog();
+            // control si tiene acceso a ver/modificar formulario
+            if (!Publica.master)
+            {
+                MessageBox.Show("No tiene autorizacion para acceder a esta opcion.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                Delegaciones frm = new Delegaciones();
+                frm.ShowDialog();
+            }
         }
         private void toolStripMenuItemAdministradores_Click(object sender, EventArgs e)
         {
@@ -103,20 +109,44 @@ namespace EEVAPPDsktp
         }
         private void toolStripMenuItemDatosAsociacion_Click(object sender, EventArgs e)
         {
-            DatosAsociacion frm = new DatosAsociacion();
-            frm.ShowDialog();
+            // control si tiene acceso a ver/modificar formulario
+            if (!Publica.master)
+            {
+                MessageBox.Show("No tiene autorizacion para acceder a esta opcion.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                DatosAsociacion frm = new DatosAsociacion();
+                frm.ShowDialog();
+            }
         }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Opciones de CONFIGURACION DE APP
         private void toolStripMenuItemTraducciones_Click(object sender, EventArgs e)
         {
-            Traducciones frm = new Traducciones();
-            frm.ShowDialog();
+            // control si tiene acceso a ver/modificar formulario
+            if (!Publica.master)
+            {
+                MessageBox.Show("No tiene autorizacion para acceder a esta opcion.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                Traducciones frm = new Traducciones();
+                frm.ShowDialog();
+            }
         }
 
         private void toolStripMenuItemConfiguracionInicial_Click(object sender, EventArgs e)
         {
-            ConfiguracionInicial frm = new ConfiguracionInicial();
-            frm.ShowDialog();
+            // control si tiene acceso a ver/modificar formulario
+            if (!Publica.master)
+            {
+                MessageBox.Show("No tiene autorizacion para acceder a esta opcion.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                ConfiguracionInicial frm = new ConfiguracionInicial();
+                frm.ShowDialog();
+            }
         }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Opciones de ABOUT US
         private void toolStripMenuItemEevapp_Click(object sender, EventArgs e)
