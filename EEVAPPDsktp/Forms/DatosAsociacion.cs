@@ -78,7 +78,6 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - DATOS FORM a ENTIDAD
         private AsociationDataes asignDataFormToEntity()
         {
-            int aux;
             AsociationDataes entidad = new AsociationDataes();
             entidad.m_Nombre = textBoxNombre.Text;
             entidad.m_CIF = textBoxCIF.Text;

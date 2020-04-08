@@ -181,6 +181,12 @@
     <Compile Include="Forms\Socios.Designer.cs">
       <DependentUpon>Socios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SociosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SociosForm.Designer.cs">
+      <DependentUpon>SociosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Traducciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProyectoEevapp.resx">
       <DependentUpon>ProyectoEevapp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Socios.resx">
+      <DependentUpon>Socios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SociosForm.resx">
+      <DependentUpon>SociosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Traducciones.resx">
       <DependentUpon>Traducciones.cs</DependentUpon>

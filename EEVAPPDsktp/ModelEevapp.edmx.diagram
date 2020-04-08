@@ -35,6 +35,7 @@
         <AssociationConnector Association="EevappModel.FK_USUARIOS_DELEGACIONES" />
         <AssociationConnector Association="EevappModel.FK_DOCUMENTOS_DSKTUSERS" />
         <AssociationConnector Association="EevappModel.FK_EVENTOS_DSKTUSERS" />
+        <AssociationConnector Association="EevappModel.FK_USUARIOS_DSKTUSERS" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

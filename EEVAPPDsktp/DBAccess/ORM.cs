@@ -20,11 +20,11 @@ namespace EEVAPPDsktp.DBAccess
             switch (ex.Number)
             {
                 case -1: mensaje = "Error de conexion con el servidor"; break;
-                case 547: mensaje = "Tiene datos relacionados"; break;
-                case 2601: mensaje = "Datos duplicados"; break;
-                case 2627: mensaje = "Datos duplicados"; break;
-                case 4060: mensaje = "No se encuentra en la base de datos"; break;
-                case 18456: mensaje = "Usuario o contraseña incorrectos"; break;
+                case 547: mensaje = "Tiene datos relacionados (547)"; break;
+                case 2601: mensaje = "Datos duplicados (2601)"; break;
+                case 2627: mensaje = "Datos duplicados (2627)"; break;
+                case 4060: mensaje = "No se encuentra en la base de datos (4060)"; break;
+                case 18456: mensaje = "Usuario o contraseña incorrectos (18456)"; break;
                 default: mensaje = mensaje = ex.Number + " - " + ex.Message; break;
             }
             return mensaje;

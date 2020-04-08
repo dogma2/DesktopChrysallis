@@ -132,16 +132,16 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="estado" Type="tinyint" />
-          <Property Name="cidapp" Type="nchar" MaxLength="10" />
+          <Property Name="cidapp" Type="nchar" MaxLength="128" />
           <Property Name="idsocio" Type="varchar" MaxLength="16" />
           <Property Name="email" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="imei" Type="varchar" MaxLength="18" />
-          <Property Name="fechaestado" Type="int" />
+          <Property Name="fechaestado" Type="bigint" />
           <Property Name="notaestado" Type="varchar" MaxLength="250" />
           <Property Name="iddelegacion" Type="int" />
-          <Property Name="iddsktuser" Type="int" Nullable="false" />
+          <Property Name="iddsktuser" Type="int" />
         </EntityType>
         <Association Name="FK_ASISTENTES_EVENTOS">
           <End Role="EVENTOS" Type="Self.EVENTOS" Multiplicity="1" />
@@ -323,6 +323,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_USUARIOS_DSKTUSERS">
+          <End Role="DSKTUSERS" Type="Self.DSKTUSERS" Multiplicity="0..1" />
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DSKTUSERS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="USUARIOS">
+              <PropertyRef Name="iddsktuser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="EevappModelStoreContainer">
           <EntitySet Name="ASISTENTES" EntityType="Self.ASISTENTES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CCAA" EntityType="Self.CCAA" Schema="dbo" store:Type="Tables" />
@@ -392,6 +404,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_USUARIOS_DELEGACIONES" Association="Self.FK_USUARIOS_DELEGACIONES">
             <End Role="DELEGACIONES" EntitySet="DELEGACIONES" />
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USUARIOS_DSKTUSERS" Association="Self.FK_USUARIOS_DSKTUSERS">
+            <End Role="DSKTUSERS" EntitySet="DSKTUSERS" />
             <End Role="USUARIOS" EntitySet="USUARIOS" />
           </AssociationSet>
         </EntityContainer>
@@ -517,16 +533,17 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="estado" Type="Byte" />
-          <Property Name="cidapp" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="cidapp" Type="String" MaxLength="128" FixedLength="true" Unicode="true" />
           <Property Name="idsocio" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="imei" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
-          <Property Name="fechaestado" Type="Int32" />
+          <Property Name="fechaestado" Type="Int64" />
           <Property Name="notaestado" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="iddelegacion" Type="Int32" />
-          <Property Name="iddsktuser" Type="Int32" Nullable="false" />
+          <Property Name="iddsktuser" Type="Int32" />
           <NavigationProperty Name="ASISTENTES" Relationship="Self.FK_ASISTENTES_USUARIOS" FromRole="USUARIOS" ToRole="ASISTENTES" />
           <NavigationProperty Name="DELEGACIONES" Relationship="EevappModel.FK_USUARIOS_DELEGACIONES" FromRole="USUARIOS" ToRole="DELEGACIONES" />
+          <NavigationProperty Name="DSKTUSERS" Relationship="EevappModel.FK_USUARIOS_DSKTUSERS" FromRole="USUARIOS" ToRole="DSKTUSERS" />
         </EntityType>
         <Association Name="FK_ASISTENTES_EVENTOS">
           <End Role="EVENTOS" Type="Self.EVENTOS" Multiplicity="1" />
@@ -695,6 +712,10 @@
             <End Role="DSKTUSERS" EntitySet="DSKTUSERS" />
             <End Role="EVENTOS" EntitySet="EVENTOS" />
           </AssociationSet>
+          <AssociationSet Name="FK_USUARIOS_DSKTUSERS" Association="EevappModel.FK_USUARIOS_DSKTUSERS">
+            <End Role="DSKTUSERS" EntitySet="DSKTUSERS" />
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="DELEGACIONES">
           <Key>
@@ -734,6 +755,7 @@
           <NavigationProperty Name="DOCUMENTOS" Relationship="EevappModel.FK_DOCUMENTOS_DSKTUSERS" FromRole="DSKTUSERS" ToRole="DOCUMENTOS" />
           <NavigationProperty Name="EVENTOS" Relationship="EevappModel.FK_EVENTOS_DSKTUSERS" FromRole="DSKTUSERS" ToRole="EVENTOS" />
           <Property Name="nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USUARIOS" Relationship="EevappModel.FK_USUARIOS_DSKTUSERS" FromRole="DSKTUSERS" ToRole="USUARIOS" />
         </EntityType>
         <Association Name="FK_DATOSINTERES_DELEGACIONES">
           <End Type="EevappModel.DELEGACIONES" Role="DELEGACIONES" Multiplicity="0..1" />
@@ -815,6 +837,18 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="EVENTOS">
+              <PropertyRef Name="iddsktuser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USUARIOS_DSKTUSERS">
+          <End Type="EevappModel.DSKTUSERS" Role="DSKTUSERS" Multiplicity="0..1" />
+          <End Type="EevappModel.USUARIOS" Role="USUARIOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DSKTUSERS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="USUARIOS">
               <PropertyRef Name="iddsktuser" />
             </Dependent>
           </ReferentialConstraint>

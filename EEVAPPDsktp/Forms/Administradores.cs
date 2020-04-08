@@ -98,7 +98,7 @@ namespace EEVAPPDsktp.Forms
                 bindingSourceAdministradores.DataSource = DBAccess.AdministradoresORM.SelectByDelegacion(Publica.iddelegacion);
                 bindingSourceDelegaciones.DataSource = DBAccess.DelegacionesORM.SelectById(Publica.iddelegacion);
                 bindingSourceComunidades.DataSource = DBAccess.ComunidadesORM.SelectAllEntidades();
-                if (Publica.idccaa != null && Publica.idccaa > 0) { comboBoxComunidad.SelectedValue = Publica.idccaa; }
+                if (Publica.idccaa > 0) { comboBoxComunidad.SelectedValue = Publica.idccaa; }
                 bindingSourceProvincias.DataSource = ((CCAA)comboBoxComunidad.SelectedItem).PROVINCIAS.ToList();
             }
         }
