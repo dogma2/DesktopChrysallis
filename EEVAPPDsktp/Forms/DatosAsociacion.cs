@@ -5,19 +5,19 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// EEVAPP Project - Datos Asociaciones: gestiona datos DatosAsociacion en archivo JSON en local con opcion de carga en servidor
+// EEVAPP Project - Datos Asociaciones: gestiona datos DatosAsociacion en archivo JSON en servidor
 // PROYECTO - 2º Proyecto DAM2T
 // DOGMA2 - 21/03/2020 - CEP
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// More Data JSON API IN WEB https://techclub.tajamar.es/consultas-de-accion-con-json-en-una-webapi/
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 namespace EEVAPPDsktp.Forms
@@ -49,29 +49,35 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - DATOS ENTIDAD a FORM
         private void loadDataToForm()
         {
-            AsociationDataes entidad;
             // carga comunidades y provincias
             bindingSourceComunidades.DataSource = DBAccess.ComunidadesORM.SelectAllEntidades();
             bindingSourceProvincias.DataSource = ((CCAA)comboBoxComunidad.SelectedItem).PROVINCIAS.ToList();
-            // si existe JSON
-            if ( File.Exists( Publica.FILE_PATH + Publica.FILE_DATA ) )
+            AsociationDataes entidad = null;
+            // Lee Archivo JSON desde servidor
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://api.eevapp.es/api/UPDATAS");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "GET";
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            try
             {
-                // Lee Archivo JSON
-                JObject jsonentidad = JObject.Parse( File.ReadAllText( Publica.FILE_PATH + Publica.FILE_DATA ) );
+                StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream());
+                string result = (String)streamReader.ReadToEnd();
+                JObject jsonentidad = JObject.Parse(result);
                 entidad = jsonentidad.ToObject<AsociationDataes>();
-                // Asigna datos a formulario
-                textBoxNombre.Text = entidad.m_Nombre;
-                textBoxCIF.Text = entidad.m_CIF;
-                textBoxTelefono.Text = entidad.m_Telefono;
-                textBoxDireccion.Text = entidad.m_Direccion;
-                textBoxCiudad.Text = entidad.m_Ciudad;
-                textBoxCodigoPostal.Text = entidad.m_CodigoPostal;
-                comboBoxComunidad.SelectedValue = entidad.m_IdComunidad;
-                comboBoxProvincia.SelectedValue = entidad.m_IdProvincia;
-                textBoxEmail.Text = entidad.m_Email;
-                textBoxWeb.Text = entidad.m_Web;
-                textBoxRGPD.Text = entidad.m_RGPD;
             }
+            catch (Exception ex) { Debug.Write(ex.ToString()); }
+            // Asigna datos a formulario
+            textBoxNombre.Text = entidad.m_Nombre;
+            textBoxCIF.Text = entidad.m_CIF;
+            textBoxTelefono.Text = entidad.m_Telefono;
+            textBoxDireccion.Text = entidad.m_Direccion;
+            textBoxCiudad.Text = entidad.m_Ciudad;
+            textBoxCodigoPostal.Text = entidad.m_CodigoPostal;
+            comboBoxComunidad.SelectedValue = entidad.m_IdComunidad;
+            comboBoxProvincia.SelectedValue = entidad.m_IdProvincia;
+            textBoxEmail.Text = entidad.m_Email;
+            textBoxWeb.Text = entidad.m_Web;
+            textBoxRGPD.Text = entidad.m_RGPD;
             isModified = false;
         }
 
@@ -100,15 +106,22 @@ namespace EEVAPPDsktp.Forms
         private void almacenarDatosEntidad()
         {
             AsociationDataes entidad = asignDataFormToEntity();
-            if (entidad != null) {
-                JObject jsonentidad = (JObject)JToken.FromObject(entidad);
-                StreamWriter fichero = File.CreateText( Publica.FILE_PATH + Publica.FILE_DATA );
-                JsonTextWriter jsonwriter = new JsonTextWriter(fichero);
-                jsonentidad.WriteTo(jsonwriter);
-                jsonwriter.Close();
-                MessageBox.Show("Datos almacenados correctamente...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (entidad != null)
+            {
+                HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://api.eevapp.es/api/UPDATAS");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = WebRequestMethods.Http.Post;
+                try
+                {
+                    JObject jsonentidad = (JObject)JToken.FromObject(entidad);
+                    StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream());
+                    streamWriter.Write(jsonentidad);
+                    streamWriter.Close();
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    MessageBox.Show("Datos almacenados correctamente...", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex) { Debug.WriteLine(ex.ToString()); }
             }
-            else { MessageBox.Show("Entidad vacía (nulo)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);  }
             isModified = false;
         }
 
@@ -143,18 +156,6 @@ namespace EEVAPPDsktp.Forms
         private void textBoxWeb_TextChanged(object sender, EventArgs e) { isModified = true; }
         private void textBoxRGPD_TextChanged(object sender, EventArgs e) { isModified = true; }
 
-        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - UPLOAD METHOD
-        private void buttonUpLoad_Click(object sender, EventArgs e)
-        {
-            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-            // Evento para publicacion de informacion en servidor, se puede realizar de forma automatica pero se deja asi de momento para desarrollarlo mas tarde
-            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-            // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-
-
-        }
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     }

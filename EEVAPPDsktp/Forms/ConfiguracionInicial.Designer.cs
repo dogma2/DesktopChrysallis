@@ -59,7 +59,6 @@
             this.labelUpdateText = new System.Windows.Forms.Label();
             this.textBoxUpdate = new System.Windows.Forms.TextBox();
             this.checkBoxGPS = new System.Windows.Forms.CheckBox();
-            this.buttonUpLoad = new System.Windows.Forms.Button();
             this.groupBoxDatos.SuspendLayout();
             this.groupLang.SuspendLayout();
             this.groupBoxAlert.SuspendLayout();
@@ -376,23 +375,12 @@
             this.checkBoxGPS.UseVisualStyleBackColor = true;
             this.checkBoxGPS.CheckedChanged += new System.EventHandler(this.checkBoxGPS_CheckedChanged);
             // 
-            // buttonUpLoad
-            // 
-            this.buttonUpLoad.Location = new System.Drawing.Point(32, 500);
-            this.buttonUpLoad.Name = "buttonUpLoad";
-            this.buttonUpLoad.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpLoad.TabIndex = 99;
-            this.buttonUpLoad.Text = "Actualizar";
-            this.buttonUpLoad.UseVisualStyleBackColor = true;
-            this.buttonUpLoad.Click += new System.EventHandler(this.buttonUpLoad_Click);
-            // 
             // ConfiguracionInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(343, 535);
-            this.Controls.Add(this.buttonUpLoad);
             this.Controls.Add(this.buttonAlmacenar);
             this.Controls.Add(this.groupBoxDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -447,6 +435,5 @@
         private System.Windows.Forms.GroupBox groupLang;
         private System.Windows.Forms.ComboBox comboBoxLang;
         private System.Windows.Forms.Label labelLangText;
-        private System.Windows.Forms.Button buttonUpLoad;
     }
 }
