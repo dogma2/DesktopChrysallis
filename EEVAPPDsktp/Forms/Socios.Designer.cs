@@ -41,18 +41,6 @@
             this.textBoxCodigoSocio = new System.Windows.Forms.TextBox();
             this.labelCodigoSocio = new System.Windows.Forms.Label();
             this.dataGridViewListaSocios = new System.Windows.Forms.DataGridView();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idsocioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidappDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imeiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaestadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notaestadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iddelegacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iddsktuserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aSISTENTESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dELEGACIONESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceSocios = new System.Windows.Forms.BindingSource(this.components);
             this.labelListaSocios = new System.Windows.Forms.Label();
             this.menuStripOpciones = new System.Windows.Forms.MenuStrip();
@@ -60,6 +48,21 @@
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activadesactivaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idsocioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.strState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidapp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imei = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaestado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notaestado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iddelegacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iddsktuser = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ASISTENTES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DELEGACIONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DSKTUSERS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDelegaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaSocios)).BeginInit();
@@ -178,16 +181,19 @@
             this.dataGridViewListaSocios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.emailDataGridViewTextBoxColumn,
             this.idsocioDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn,
-            this.idDataGridViewTextBoxColumn,
-            this.cidappDataGridViewTextBoxColumn,
-            this.imeiDataGridViewTextBoxColumn,
-            this.fechaestadoDataGridViewTextBoxColumn,
-            this.notaestadoDataGridViewTextBoxColumn,
-            this.iddelegacionDataGridViewTextBoxColumn,
-            this.iddsktuserDataGridViewTextBoxColumn,
-            this.aSISTENTESDataGridViewTextBoxColumn,
-            this.dELEGACIONESDataGridViewTextBoxColumn});
+            this.estado,
+            this.strState,
+            this.id,
+            this.cidapp,
+            this.email,
+            this.imei,
+            this.fechaestado,
+            this.notaestado,
+            this.iddelegacion,
+            this.iddsktuser,
+            this.ASISTENTES,
+            this.DELEGACIONES,
+            this.DSKTUSERS});
             this.dataGridViewListaSocios.DataSource = this.bindingSourceSocios;
             this.dataGridViewListaSocios.Location = new System.Drawing.Point(17, 143);
             this.dataGridViewListaSocios.MultiSelect = false;
@@ -196,102 +202,7 @@
             this.dataGridViewListaSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewListaSocios.Size = new System.Drawing.Size(950, 334);
             this.dataGridViewListaSocios.TabIndex = 20;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idsocioDataGridViewTextBoxColumn
-            // 
-            this.idsocioDataGridViewTextBoxColumn.DataPropertyName = "idsocio";
-            this.idsocioDataGridViewTextBoxColumn.HeaderText = "Codigo de Socio";
-            this.idsocioDataGridViewTextBoxColumn.Name = "idsocioDataGridViewTextBoxColumn";
-            this.idsocioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idsocioDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cidappDataGridViewTextBoxColumn
-            // 
-            this.cidappDataGridViewTextBoxColumn.DataPropertyName = "cidapp";
-            this.cidappDataGridViewTextBoxColumn.HeaderText = "cidapp";
-            this.cidappDataGridViewTextBoxColumn.Name = "cidappDataGridViewTextBoxColumn";
-            this.cidappDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cidappDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // imeiDataGridViewTextBoxColumn
-            // 
-            this.imeiDataGridViewTextBoxColumn.DataPropertyName = "imei";
-            this.imeiDataGridViewTextBoxColumn.HeaderText = "imei";
-            this.imeiDataGridViewTextBoxColumn.Name = "imeiDataGridViewTextBoxColumn";
-            this.imeiDataGridViewTextBoxColumn.ReadOnly = true;
-            this.imeiDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fechaestadoDataGridViewTextBoxColumn
-            // 
-            this.fechaestadoDataGridViewTextBoxColumn.DataPropertyName = "fechaestado";
-            this.fechaestadoDataGridViewTextBoxColumn.HeaderText = "fechaestado";
-            this.fechaestadoDataGridViewTextBoxColumn.Name = "fechaestadoDataGridViewTextBoxColumn";
-            this.fechaestadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaestadoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // notaestadoDataGridViewTextBoxColumn
-            // 
-            this.notaestadoDataGridViewTextBoxColumn.DataPropertyName = "notaestado";
-            this.notaestadoDataGridViewTextBoxColumn.HeaderText = "notaestado";
-            this.notaestadoDataGridViewTextBoxColumn.Name = "notaestadoDataGridViewTextBoxColumn";
-            this.notaestadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.notaestadoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iddelegacionDataGridViewTextBoxColumn
-            // 
-            this.iddelegacionDataGridViewTextBoxColumn.DataPropertyName = "iddelegacion";
-            this.iddelegacionDataGridViewTextBoxColumn.HeaderText = "iddelegacion";
-            this.iddelegacionDataGridViewTextBoxColumn.Name = "iddelegacionDataGridViewTextBoxColumn";
-            this.iddelegacionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iddelegacionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iddsktuserDataGridViewTextBoxColumn
-            // 
-            this.iddsktuserDataGridViewTextBoxColumn.DataPropertyName = "iddsktuser";
-            this.iddsktuserDataGridViewTextBoxColumn.HeaderText = "iddsktuser";
-            this.iddsktuserDataGridViewTextBoxColumn.Name = "iddsktuserDataGridViewTextBoxColumn";
-            this.iddsktuserDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iddsktuserDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // aSISTENTESDataGridViewTextBoxColumn
-            // 
-            this.aSISTENTESDataGridViewTextBoxColumn.DataPropertyName = "ASISTENTES";
-            this.aSISTENTESDataGridViewTextBoxColumn.HeaderText = "ASISTENTES";
-            this.aSISTENTESDataGridViewTextBoxColumn.Name = "aSISTENTESDataGridViewTextBoxColumn";
-            this.aSISTENTESDataGridViewTextBoxColumn.ReadOnly = true;
-            this.aSISTENTESDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dELEGACIONESDataGridViewTextBoxColumn
-            // 
-            this.dELEGACIONESDataGridViewTextBoxColumn.DataPropertyName = "DELEGACIONES";
-            this.dELEGACIONESDataGridViewTextBoxColumn.HeaderText = "DELEGACIONES";
-            this.dELEGACIONESDataGridViewTextBoxColumn.Name = "dELEGACIONESDataGridViewTextBoxColumn";
-            this.dELEGACIONESDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dELEGACIONESDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewListaSocios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewListaSocios_CellFormatting);
             // 
             // bindingSourceSocios
             // 
@@ -360,6 +271,124 @@
             this.activadesactivaToolStripMenuItem.Text = "activa/desactiva";
             this.activadesactivaToolStripMenuItem.Click += new System.EventHandler(this.activadesactivaToolStripMenuItem_Click);
             // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idsocioDataGridViewTextBoxColumn
+            // 
+            this.idsocioDataGridViewTextBoxColumn.DataPropertyName = "idsocio";
+            this.idsocioDataGridViewTextBoxColumn.HeaderText = "Codigo de Socio";
+            this.idsocioDataGridViewTextBoxColumn.Name = "idsocioDataGridViewTextBoxColumn";
+            this.idsocioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idsocioDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "estado";
+            this.estado.HeaderText = "estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
+            // 
+            // strState
+            // 
+            this.strState.HeaderText = "Estado";
+            this.strState.Name = "strState";
+            this.strState.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // cidapp
+            // 
+            this.cidapp.DataPropertyName = "cidapp";
+            this.cidapp.HeaderText = "cidapp";
+            this.cidapp.Name = "cidapp";
+            this.cidapp.ReadOnly = true;
+            this.cidapp.Visible = false;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Visible = false;
+            // 
+            // imei
+            // 
+            this.imei.DataPropertyName = "imei";
+            this.imei.HeaderText = "imei";
+            this.imei.Name = "imei";
+            this.imei.ReadOnly = true;
+            this.imei.Visible = false;
+            // 
+            // fechaestado
+            // 
+            this.fechaestado.DataPropertyName = "fechaestado";
+            this.fechaestado.HeaderText = "fechaestado";
+            this.fechaestado.Name = "fechaestado";
+            this.fechaestado.ReadOnly = true;
+            this.fechaestado.Visible = false;
+            // 
+            // notaestado
+            // 
+            this.notaestado.DataPropertyName = "notaestado";
+            this.notaestado.HeaderText = "notaestado";
+            this.notaestado.Name = "notaestado";
+            this.notaestado.ReadOnly = true;
+            this.notaestado.Visible = false;
+            // 
+            // iddelegacion
+            // 
+            this.iddelegacion.DataPropertyName = "iddelegacion";
+            this.iddelegacion.HeaderText = "iddelegacion";
+            this.iddelegacion.Name = "iddelegacion";
+            this.iddelegacion.ReadOnly = true;
+            this.iddelegacion.Visible = false;
+            // 
+            // iddsktuser
+            // 
+            this.iddsktuser.DataPropertyName = "iddsktuser";
+            this.iddsktuser.HeaderText = "iddsktuser";
+            this.iddsktuser.Name = "iddsktuser";
+            this.iddsktuser.ReadOnly = true;
+            this.iddsktuser.Visible = false;
+            // 
+            // ASISTENTES
+            // 
+            this.ASISTENTES.DataPropertyName = "ASISTENTES";
+            this.ASISTENTES.HeaderText = "ASISTENTES";
+            this.ASISTENTES.Name = "ASISTENTES";
+            this.ASISTENTES.ReadOnly = true;
+            this.ASISTENTES.Visible = false;
+            // 
+            // DELEGACIONES
+            // 
+            this.DELEGACIONES.DataPropertyName = "DELEGACIONES";
+            this.DELEGACIONES.HeaderText = "DELEGACIONES";
+            this.DELEGACIONES.Name = "DELEGACIONES";
+            this.DELEGACIONES.ReadOnly = true;
+            this.DELEGACIONES.Visible = false;
+            // 
+            // DSKTUSERS
+            // 
+            this.DSKTUSERS.DataPropertyName = "DSKTUSERS";
+            this.DSKTUSERS.HeaderText = "DSKTUSERS";
+            this.DSKTUSERS.Name = "DSKTUSERS";
+            this.DSKTUSERS.ReadOnly = true;
+            this.DSKTUSERS.Visible = false;
+            // 
             // Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,22 +434,25 @@
         private System.Windows.Forms.Label labelListaSocios;
         private System.Windows.Forms.BindingSource bindingSourceDelegaciones;
         private System.Windows.Forms.BindingSource bindingSourceSocios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idsocioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cidappDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imeiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaestadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notaestadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iddelegacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iddsktuserDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aSISTENTESDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dELEGACIONESDataGridViewTextBoxColumn;
         private System.Windows.Forms.MenuStrip menuStripOpciones;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem activadesactivaToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idsocioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn strState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidapp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imei;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaestado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notaestado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iddelegacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iddsktuser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ASISTENTES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DELEGACIONES;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DSKTUSERS;
     }
 }

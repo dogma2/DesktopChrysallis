@@ -31,14 +31,12 @@ namespace EEVAPPDsktp.Forms
             if (Publica.master)
             {
                 bindingSourceDelegaciones.DataSource = DBAccess.DelegacionesORM.SelectAllEntidades();
-                bindingSourceSocios.DataSource = DBAccess.UsuariosORM.SelectAllEntidades();
             }
             else
             {
                 bindingSourceDelegaciones.DataSource = DBAccess.DelegacionesORM.SelectById(Publica.iddelegacion);
-                // bindingSourceSocios.DataSource = DBAccess.UsuariosORM.SelectByDelegacion(Publica.iddelegacion);
-                bindingSourceSocios.DataSource = GetBySelectedDelegacion();
             }
+            loadDataToGrid();
         }
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e) { loadDataToGrid(); textBoxEmail.Focus(); }
@@ -55,6 +53,7 @@ namespace EEVAPPDsktp.Forms
         private void loadDataToGrid()
         {
             int estado = comboBoxEstado.SelectedIndex;
+            if (estado < 0) { estado = 0; }
             if (Publica.master)
             {
                 int iddelegacion;
@@ -132,6 +131,27 @@ namespace EEVAPPDsktp.Forms
         private List<USUARIOS> GetBySelectedDelegacion()
         {
             return ((DELEGACIONES)comboBoxDelegacion.SelectedItem).USUARIOS.ToList();
+        }
+
+        private void dataGridViewListaSocios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // obtiene los valores de objeto de la fila
+            USUARIOS _entidad = (USUARIOS)dataGridViewListaSocios.Rows[e.RowIndex].DataBoundItem;
+            // controla valor de estadoi del objeto
+            if (e.ColumnIndex == 3) // Estado string Activo / Inactivo
+            {
+                e.CellStyle.ForeColor = Color.White;
+                if (_entidad.estado == 0)
+                {
+                    e.CellStyle.SelectionBackColor = Color.Red;
+                    e.CellStyle.BackColor = Color.Red;
+                    e.Value = "Inactive";
+                } else {
+                    e.CellStyle.SelectionBackColor = Color.ForestGreen;
+                    e.CellStyle.BackColor = Color.ForestGreen;
+                    e.Value = "Active";
+                }
+            }
         }
     }
 

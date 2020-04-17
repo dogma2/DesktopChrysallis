@@ -27,8 +27,6 @@ namespace EEVAPPDsktp.Forms
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Form Load 
         private void SociosForm_Load(object sender, EventArgs e)
         {
-            if (entidad.id > 0) { loadDataForm(); this.Text = "Modifica Socio";  }
-            else { this.Text = "Nuevo Socios"; }
             if (Publica.master)
             {
                 bindingSourceDelegaciones.DataSource = DBAccess.DelegacionesORM.SelectAllEntidades();
@@ -37,6 +35,8 @@ namespace EEVAPPDsktp.Forms
             {
                 bindingSourceDelegaciones.DataSource = DBAccess.DelegacionesORM.SelectById(Publica.iddelegacion);
             }
+            if (entidad.id > 0) { loadDataForm(); this.Text = "Modifica Socio"; }
+            else { this.Text = "Nuevo Socios"; }
         }
 
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - LOAD data Form
