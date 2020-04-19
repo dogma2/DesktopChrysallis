@@ -108,10 +108,14 @@
           <Property Name="idccaa" Type="tinyint" />
           <Property Name="idprovincia" Type="tinyint" />
           <Property Name="ciudad" Type="varchar" MaxLength="100" />
+          <Property Name="codigopostal" Type="nvarchar" MaxLength="10" />
           <Property Name="coordgps" Type="varchar" MaxLength="50" />
           <Property Name="ctrlglobal" Type="tinyint" />
           <Property Name="iddelegacion" Type="int" />
           <Property Name="iddsktuser" Type="int" />
+          <Property Name="responsable" Type="nvarchar" MaxLength="100" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="15" />
         </EntityType>
         <EntityType Name="IDIOMAS">
           <Key>
@@ -508,6 +512,10 @@
           <NavigationProperty Name="PROVINCIAS" Relationship="Self.FK_EVENTOS_PROVINCIAS" FromRole="EVENTOS" ToRole="PROVINCIAS" />
           <NavigationProperty Name="DELEGACIONES" Relationship="EevappModel.FK_EVENTOS_DELEGACIONES" FromRole="EVENTOS" ToRole="DELEGACIONES" />
           <NavigationProperty Name="DSKTUSERS" Relationship="EevappModel.FK_EVENTOS_DSKTUSERS" FromRole="EVENTOS" ToRole="DSKTUSERS" />
+          <Property Name="codigopostal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="responsable" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="IDIOMAS">
           <Key>
@@ -917,6 +925,10 @@
           <EntitySetMapping Name="EVENTOS">
             <EntityTypeMapping TypeName="EevappModel.EVENTOS">
               <MappingFragment StoreEntitySet="EVENTOS">
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="responsable" ColumnName="responsable" />
+                <ScalarProperty Name="codigopostal" ColumnName="codigopostal" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="cidevento" ColumnName="cidevento" />
                 <ScalarProperty Name="estado" ColumnName="estado" />

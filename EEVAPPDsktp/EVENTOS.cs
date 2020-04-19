@@ -41,6 +41,10 @@ namespace EEVAPPDsktp
         public Nullable<byte> ctrlglobal { get; set; }
         public Nullable<int> iddelegacion { get; set; }
         public Nullable<int> iddsktuser { get; set; }
+        public string codigopostal { get; set; }
+        public string responsable { get; set; }
+        public string email { get; set; }
+        public string telefono { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ASISTENTES> ASISTENTES { get; set; }
