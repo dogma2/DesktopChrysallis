@@ -238,13 +238,20 @@ namespace EEVAPPDsktp.Forms
 
         private void comboBoxComunidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadListsDataToForm();
+            //isModified = true;
+            CCAA _comunidad;
+            if (comboBoxComunidad.SelectedItem != null)
+            {
+                _comunidad = (CCAA)comboBoxComunidad.SelectedItem;
+                bindingSourceProvincias.DataSource = _comunidad.PROVINCIAS;
+            }
         }
 
         private void DetallesEvento_Load(object sender, EventArgs e)
         {
 
         }
+
 
         private void seleccionarImagen()
         {

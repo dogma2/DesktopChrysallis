@@ -361,7 +361,7 @@
             // 
             this.labelProvincia.AutoSize = true;
             this.labelProvincia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelProvincia.Location = new System.Drawing.Point(568, 442);
+            this.labelProvincia.Location = new System.Drawing.Point(804, 440);
             this.labelProvincia.Name = "labelProvincia";
             this.labelProvincia.Size = new System.Drawing.Size(51, 13);
             this.labelProvincia.TabIndex = 29;
@@ -371,7 +371,7 @@
             // 
             this.labelComunidadAutonoma.AutoSize = true;
             this.labelComunidadAutonoma.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelComunidadAutonoma.Location = new System.Drawing.Point(784, 442);
+            this.labelComunidadAutonoma.Location = new System.Drawing.Point(568, 441);
             this.labelComunidadAutonoma.Name = "labelComunidadAutonoma";
             this.labelComunidadAutonoma.Size = new System.Drawing.Size(111, 13);
             this.labelComunidadAutonoma.TabIndex = 30;
@@ -393,16 +393,16 @@
             // 
             // textBoxContacto
             // 
-            this.textBoxContacto.Location = new System.Drawing.Point(769, 500);
+            this.textBoxContacto.Location = new System.Drawing.Point(746, 500);
             this.textBoxContacto.Name = "textBoxContacto";
-            this.textBoxContacto.Size = new System.Drawing.Size(245, 20);
+            this.textBoxContacto.Size = new System.Drawing.Size(268, 20);
             this.textBoxContacto.TabIndex = 33;
             // 
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelEmail.Location = new System.Drawing.Point(252, 483);
+            this.labelEmail.Location = new System.Drawing.Point(249, 486);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 34;
@@ -412,7 +412,7 @@
             // 
             this.labelTelefono.AutoSize = true;
             this.labelTelefono.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelTelefono.Location = new System.Drawing.Point(577, 484);
+            this.labelTelefono.Location = new System.Drawing.Point(568, 486);
             this.labelTelefono.Name = "labelTelefono";
             this.labelTelefono.Size = new System.Drawing.Size(49, 13);
             this.labelTelefono.TabIndex = 35;
@@ -422,7 +422,7 @@
             // 
             this.labelPersonaContacto.AutoSize = true;
             this.labelPersonaContacto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelPersonaContacto.Location = new System.Drawing.Point(769, 486);
+            this.labelPersonaContacto.Location = new System.Drawing.Point(749, 486);
             this.labelPersonaContacto.Name = "labelPersonaContacto";
             this.labelPersonaContacto.Size = new System.Drawing.Size(106, 13);
             this.labelPersonaContacto.TabIndex = 36;
@@ -526,9 +526,9 @@
             this.comboBoxComunidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxComunidad.FormattingEnabled = true;
             this.comboBoxComunidad.ItemHeight = 13;
-            this.comboBoxComunidad.Location = new System.Drawing.Point(782, 458);
+            this.comboBoxComunidad.Location = new System.Drawing.Point(571, 459);
             this.comboBoxComunidad.Name = "comboBoxComunidad";
-            this.comboBoxComunidad.Size = new System.Drawing.Size(232, 21);
+            this.comboBoxComunidad.Size = new System.Drawing.Size(213, 21);
             this.comboBoxComunidad.TabIndex = 46;
             this.comboBoxComunidad.ValueMember = "id";
             this.comboBoxComunidad.SelectedIndexChanged += new System.EventHandler(this.comboBoxComunidad_SelectedIndexChanged);
@@ -539,9 +539,9 @@
             this.comboBoxProvincia.DisplayMember = "nombre";
             this.comboBoxProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProvincia.FormattingEnabled = true;
-            this.comboBoxProvincia.Location = new System.Drawing.Point(571, 459);
+            this.comboBoxProvincia.Location = new System.Drawing.Point(807, 459);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
-            this.comboBoxProvincia.Size = new System.Drawing.Size(187, 21);
+            this.comboBoxProvincia.Size = new System.Drawing.Size(207, 21);
             this.comboBoxProvincia.TabIndex = 47;
             this.comboBoxProvincia.ValueMember = "id";
             // 
