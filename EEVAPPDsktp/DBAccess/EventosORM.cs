@@ -60,5 +60,27 @@ namespace EEVAPPDsktp.DBAccess
             ORM.dbe.EVENTOS.Remove(entidad);
             return DBAccess.ORM.SaveChanges();
         }
+
+        // - - - - - retorna LISTA de entidades por TITULO, ESTADO, CIUDAD, IDDELEGACION
+        //Fecha inicio, titulo, estado, ciudad y delegación
+        public static List<EVENTOS> SelectByFilters(string titulo, byte estado, string ciudad, int iddelegacion)
+        {
+            String theW = "";
+            if(titulo.Length > 0) { theW += (theW.Length > 0 ? " AND " : "") + "(e.titulo LIKE '%" + titulo + "%')"; }
+            if (estado == 1) { theW += (theW.Length > 0 ? " AND " : "") + "(e.estado = 1)"; }
+            else if (estado == 2) { theW += (theW.Length > 0 ? " AND " : "") + "(e.estado = 0)"; }
+            if (ciudad.Length > 0) { theW += (theW.Length > 0 ? " AND " : "") + "(e.ciudad LIKE '%" + ciudad + "%')"; }
+            if (iddelegacion > 0) { theW += (theW.Length > 0 ? " AND " : "") + "(e.iddelegacion = " + iddelegacion + ")"; }
+            theW = (theW.Length > 0 ? " WHERE " : "") + theW;
+            String theQ = "SELECT e.cidevento,  e.fechainicio, e.titulo, e.estado, e.ciudad, e.iddelegacion FROM EVENTOS AS e" +
+                theW + " ORDER BY e.cidevento DESC";
+            // Console.WriteLine("email.Length: " + email.Length);
+            // Console.WriteLine("estado: " + estado);
+            // Console.WriteLine("idsocio.Length: " + idsocio.Length);
+            // Console.WriteLine("iddelegacion: " + iddelegacion);
+            // Console.WriteLine("theQ: " + theQ);
+            List<EVENTOS> _entidades = ORM.dbe.EVENTOS.SqlQuery(theQ).ToList();
+            return _entidades;
+        }
     }
 }

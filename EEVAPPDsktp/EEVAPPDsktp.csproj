@@ -54,8 +54,8 @@
     <ApplicationIcon>AppIcon256.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
-      <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
@@ -151,6 +151,12 @@
     <Compile Include="Forms\Delegaciones.Designer.cs">
       <DependentUpon>Delegaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DetallesEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetallesEvento.Designer.cs">
+      <DependentUpon>DetallesEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dogma2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,11 +242,17 @@
     <EmbeddedResource Include="Forms\Delegaciones.resx">
       <DependentUpon>Delegaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetallesEvento.resx">
+      <DependentUpon>DetallesEvento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dogma2.resx">
       <DependentUpon>Dogma2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\eevapp.resx">
       <DependentUpon>eevapp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Eventos.resx">
+      <DependentUpon>Eventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProyectoEevapp.resx">
       <DependentUpon>ProyectoEevapp.cs</DependentUpon>
