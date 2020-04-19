@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\techartivity\source\repos\DOGMA2_EEVAPP_Dsktp_Project\EEVAPPDsktp\ModelEevapp.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'F:\Daagas\DOGMA2\Chrysallis\Desktop\DesktopChrysallis\EEVAPPDsktp\ModelEevapp.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

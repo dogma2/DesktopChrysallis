@@ -29,6 +29,16 @@ namespace EEVAPPDsktp.DBAccess
             return _entidades;
         }
 
+        // - - - - - retorna LISTA de entidades por nombre
+        public static List<CCAA> SelectByName(string name)
+        {
+            List<CCAA> _entidades = (from e in DBAccess.ORM.dbe.CCAA
+                                     where e.nombre.Equals(name)
+                                     select e
+                                        ).ToList();
+            return _entidades;
+        }
+
         // - - - - - INSERTA una entidad el la tabla
         public static string InsertaEntidad(CCAA entidad)
         {
