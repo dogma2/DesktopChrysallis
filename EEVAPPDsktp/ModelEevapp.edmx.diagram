@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bb5f81d9bb504aeaafe7951336a6f0cd" Name="Diagram1">
+        <EntityTypeShape EntityType="EevappModel.ASISTENTES" Width="1.5" PointX="4.625" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EevappModel.CCAA" Width="1.5" PointX="5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EevappModel.DATOSINTERES" Width="1.5" PointX="0.875" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EevappModel.DOCUMENTOS" Width="1.5" PointX="0.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EevappModel.EVENTOS" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EevappModel.IDIOMAS" Width="1.5" PointX="10.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EevappModel.PROVINCIAS" Width="1.5" PointX="2.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EevappModel.USUARIOS" Width="1.5" PointX="6.5" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="EevappModel.FK_ASISTENTES_EVENTOS" ManuallyRouted="false" />
+        <AssociationConnector Association="EevappModel.FK_ASISTENTES_USUARIOS" ManuallyRouted="false" />
+        <AssociationConnector Association="EevappModel.FK_DATOSINTERES_CCAA" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="EevappModel.FK_EVENTOS_CCAA" ManuallyRouted="true" >
+          <ConnectorPoint PointX="5.3950473059218123" PointY="6.625" />
+          <ConnectorPoint PointX="5.3950473059218123" PointY="6.243494818060249" />
+          <ConnectorPoint PointX="4.25" PointY="6.243494818060249" />
+        </AssociationConnector>
+        <AssociationConnector Association="EevappModel.FK_PROVINCIAS_CCAA" ManuallyRouted="false" />
+        <AssociationConnector Association="EevappModel.FK_DATOSINTERES_PROVINCIAS" ManuallyRouted="false" />
+        <AssociationConnector Association="EevappModel.FK_DOCUMENTOS_EVENTOS1" ManuallyRouted="false" />
+        <AssociationConnector Association="EevappModel.FK_EVENTOS_PROVINCIAS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EevappModel.DELEGACIONES" Width="1.5" PointX="7.125" PointY="5.125" />
+        <EntityTypeShape EntityType="EevappModel.DSKTUSERS" Width="1.5" PointX="8.25" PointY="0.5" />
+        <AssociationConnector Association="EevappModel.FK_DATOSINTERES_DELEGACIONES" />
+        <AssociationConnector Association="EevappModel.FK_DATOSINTERES_DSKTUSERS" />
+        <AssociationConnector Association="EevappModel.FK_DSKTUSERS_DELEGACIONES" />
+        <AssociationConnector Association="EevappModel.FK_EVENTOS_DELEGACIONES" />
+        <AssociationConnector Association="EevappModel.FK_USUARIOS_DELEGACIONES" />
+        <AssociationConnector Association="EevappModel.FK_DOCUMENTOS_DSKTUSERS" />
+        <AssociationConnector Association="EevappModel.FK_EVENTOS_DSKTUSERS" />
+        <AssociationConnector Association="EevappModel.FK_USUARIOS_DSKTUSERS" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

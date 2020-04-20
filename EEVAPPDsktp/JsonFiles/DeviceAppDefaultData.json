@@ -1,0 +1,17 @@
+{
+  "m_GPS": true,
+  "m_Sound": true,
+  "m_Lang": 0,
+  "m_Update": 12,
+  "m_LongAlertAct": true,
+  "m_LongAlert": 24,
+  "m_ShortAlertAct": true,
+  "m_ShortAlert": 2,
+  "m_AlertFromHH": 10,
+  "m_AlertFromMM": 0,
+  "m_AlertToHH": 20,
+  "m_AlertToMM": 0,
+  "m_Delegaciones": [ 1 ],
+  "m_idCCAAs": [],
+  "m_idProvincias": []
+} 
