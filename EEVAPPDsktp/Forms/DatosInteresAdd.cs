@@ -84,6 +84,7 @@ namespace EEVAPPDsktp.Forms
             datos.telefono = textBoxTelefono.Text;
             datos.contacto = textBoxPersoa.Text;
             //datos.ctrlglobal = Convert.ToByte(CheckBoxGlobal.Checked);
+            if (Publica.idusuario != 0) { datos.iddsktuser = Publica.idusuario; }
 
         }      
                

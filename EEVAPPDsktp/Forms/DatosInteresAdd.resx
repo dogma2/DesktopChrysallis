@@ -121,18 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="menuStripOpciones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>770, 17</value>
+    <value>220, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="SalirToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAABh0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzT7MfTgAAAPBJREFUOE+FkoEN
-        wjAMBNkANmg3gE1hg7JRJRaBDYLP9ConQvDSqx/77dhRD621kXPwFlyDAk2MXOfvDkFM/4Bnr6nF9cYl
-        eAmaQxMTeDOn4RoEz2AtHEkOD6AmG7CXsJjvadMQXXNiJuBo96AGbmFMCiG6TocXLBzc3eQxaOyxERAj
-        5yVg5SDQEqOFAG2xTOwiUJOMPTaobwITiHEFdwYU2oiYTboVxkc8B31ExvZNiJHD0z3i9NEJp8BYd0Zb
-        7O1g0uCP9Ara5BvJ4QH7jyTdGzBibYR2bIA3cxqkk/xC3ixrseRNMNWJ0MTIFW87vAH402/GMzOcEgAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
 </root>

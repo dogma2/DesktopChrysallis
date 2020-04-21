@@ -245,6 +245,12 @@
     <EmbeddedResource Include="Forms\DatosAsociacion.resx">
       <DependentUpon>DatosAsociacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DatosInteres.resx">
+      <DependentUpon>DatosInteres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DatosInteresAdd.resx">
+      <DependentUpon>DatosInteresAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Delegaciones.resx">
       <DependentUpon>Delegaciones.cs</DependentUpon>
     </EmbeddedResource>

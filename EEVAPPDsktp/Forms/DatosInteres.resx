@@ -120,47 +120,6 @@
   <metadata name="menuStripOpciones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="nuevoToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAABh0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzT7MfTgAAAFlJREFUOE+1jAEK
-        gDAMA/3/p2sseLiAtjp3EDhIyBaT/Hpw+JskiPBBlQQRPmh1iPBBq0OED1odIobigfUH15zcdojwQatD
-        hA9aHSJ8UCVBhA+qJMhXJg8idki0iKIt0Lx6AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="modificarToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAABh0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzT7MfTgAAAEtJREFUOE+1zEkK
-        ADAIA8D+/9M2zSGgB2sXBwIBJcMefR1Y/SSkAu6Q6B+ohlQgPuxCKuAOif6BakgF4sMupALukOgfqIZU
-        bj0OmE2kipyOKilmWAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="eliminarToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAABh0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzT7MfTgAAAPBJREFUOE+FkoEN
-        wjAMBNkANmg3gE1hg7JRJRaBDYLP9ConQvDSqx/77dhRD621kXPwFlyDAk2MXOfvDkFM/4Bnr6nF9cYl
-        eAmaQxMTeDOn4RoEz2AtHEkOD6AmG7CXsJjvadMQXXNiJuBo96AGbmFMCiG6TocXLBzc3eQxaOyxERAj
-        5yVg5SDQEqOFAG2xTOwiUJOMPTaobwITiHEFdwYU2oiYTboVxkc8B31ExvZNiJHD0z3i9NEJp8BYd0Zb
-        7O1g0uCP9Ara5BvJ4QH7jyTdGzBibYR2bIA3cxqkk/xC3ixrseRNMNWJ0MTIFW87vAH402/GMzOcEgAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="activadesactivaToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAABh0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzT7MfTgAAAL5JREFUOE+tkgsN
-        AjEQRM8BOAAH4IBzgBQkIAEJSEACEpCAhJNQZrbd7ZSU34VJXtp9HZoSGFJKc9lz7R18wwkcue8dfmIE
-        zKwLlmAqrOgoNV7UuCNXCuQAzL0qa9zxQwwvcddcENKmGs7bvK1Pd7Qc0qYafu973uafTtGyHmjOZb0A
-        nq3Lamg5pE1t+PQF4GtuILpaDmlTmx2g99dEV8shbarhv+7ZR7crhQ3g0332RKcr3+AJp/KX/OuCNDwA
-        wRxhzm0QwEgAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="DatosInteresDataSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>176, 17</value>
-  </metadata>
   <metadata name="DatosInteresDataSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>176, 17</value>
   </metadata>
