@@ -55,7 +55,6 @@ namespace EEVAPPDsktp.Forms
 
         private void labelEliminar_Click(object sender, EventArgs e)
         {
-            DBAccess.EventosORM.DeleteEntidad((EVENTOS)dataGridViewEventos.SelectedRows[0].DataBoundItem);
             if (dataGridViewEventos.CurrentRow != null && dataGridViewEventos.CurrentRow.Index >= 0)
             {
                 EVENTOS _entidad = (EVENTOS)dataGridViewEventos.CurrentRow.DataBoundItem;
@@ -75,6 +74,20 @@ namespace EEVAPPDsktp.Forms
         {
             DetallesEvento f = new DetallesEvento();
             f.Show();
-        }        
+            loadDataToGrid();
+        }
+
+        private void Eventos_Activated(object sender, EventArgs e)
+        {
+            loadDataToGrid();
+        }
+
+        private void labelModificar_Click(object sender, EventArgs e)
+        {
+            EVENTOS evento = (EVENTOS)dataGridViewEventos.CurrentRow.DataBoundItem;
+            DetallesEvento f = new DetallesEvento(evento);
+            f.Show();
+            loadDataToGrid();
+        }
     }
 }

@@ -30,13 +30,16 @@ namespace EEVAPPDsktp.Forms
             InitializeComponent();
             loadListsDataToForm();
             evento = eventos;
-            MemoryStream ms = new MemoryStream(eventos.imagen);
-            Image image = Image.FromStream(ms);
-            pictureBoxImagenEvento.Image = image;
+            if (evento.imagen != null)
+            {
+                MemoryStream ms = new MemoryStream(eventos.imagen);
+                Image image = Image.FromStream(ms);
+                pictureBoxImagenEvento.Image = image;
+            }
             textBoxTitulo.Text = eventos.titulo;
             if (eventos.ctrlglobal == 1)
             {
-                checkBoxGlobal.Checked = true; 
+                checkBoxGlobal.Checked = true;
             }
             else
             {
@@ -79,60 +82,24 @@ namespace EEVAPPDsktp.Forms
 
         private void buttonGuardarEvento_Click(object sender, EventArgs e)
         {
-            string mensaje = validateData();
+            string mensaje = validateData(), ormmsg = "";
             if (mensaje.Equals(""))
             {
-                CCAA ccaa = new CCAA();
-                evento = new EVENTOS();
-                evento.titulo = textBoxTitulo.Text;
-                evento.descripcion = richTextBoxDescripcion.Text;
-                if (checkBoxGlobal.Checked)
+                saveData();
+                if (modify)
                 {
-                    evento.ctrlglobal = 1;
+                    ormmsg = DBAccess.EventosORM.ModificaEntidad(evento);
+                    MessageBox.Show(ormmsg, "Evento modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    evento.ctrlglobal = 0;
+                    ormmsg = DBAccess.EventosORM.InsertaEntidad(evento);
+                    MessageBox.Show(ormmsg, "Nuevo evento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if (checkBoxActivado.Checked)
-                {
-                    evento.estado = 1;
-                }
-                else
-                {
-                    evento.estado = 0;
-                }
-                evento.intro = richTextBoxIntroduccion.Text;
-                evento.notastransporte = richTextBoxTransporte.Text;
-                evento.fechainicio = dateTimePickerInicio.Value.Date;
-                evento.horainicio = TimeSpan.Parse(textBoxHoraInicio.Text);
-                evento.fechafin = dateTimePickerFechaFin.Value.Date;
-                evento.horafin = TimeSpan.Parse(textBoxHoraFin.Text);
-                evento.ciudad = textBoxCiudad.Text;
-                evento.codigopostal = textBoxCodigoPostal.Text;
-                evento.email = textBoxEmail.Text;
-                evento.idprovincia = (byte)comboBoxProvincia.SelectedValue;
-                evento.idccaa = (byte)comboBoxComunidad.SelectedValue;
-                if (pictureBoxImagenEvento.Image != null)
-                {
-                    try
-                    {
-                        System.Drawing.Image image = System.Drawing.Image.FromFile(destino);
-                        evento.imagen = ImageToByteArraybyImageConverter(image);
-                    }
-                    catch (FileNotFoundException excep)
-                    {
-                        Console.WriteLine(excep.Message);
-                    }
-                }
-                evento.iddelegacion = (int)comboBoxDelegacion.SelectedValue;
-                evento.telefono = textBoxTelefono.Text;
-                evento.responsable = textBoxContacto.Text;
-                evento.iddsktuser = Publica.idusuario;
-                MessageBox.Show("El evento se ha añadido correctamente", "Nuevo evento añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
-            else {
+            else
+            {
                 MessageBox.Show(mensaje, "Faltan datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -159,7 +126,8 @@ namespace EEVAPPDsktp.Forms
             }
         }
 
-        private string validateData() {
+        private string validateData()
+        {
             string mensaje = "";
 
             if (pictureBoxImagenEvento == null)
@@ -215,7 +183,6 @@ namespace EEVAPPDsktp.Forms
                 mensaje = "Debes incluir codigo postal de la ubicación del evento";
             }
 
-
             return mensaje;
         }
 
@@ -226,13 +193,9 @@ namespace EEVAPPDsktp.Forms
 
         private void DetallesEvento_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (modify)
+            if (validateData().Equals(""))
             {
-                DBAccess.EventosORM.ModificaEntidad(evento);
-            }
-            else
-            {
-                DBAccess.EventosORM.InsertaEntidad(evento);
+
             }
         }
 
@@ -250,6 +213,57 @@ namespace EEVAPPDsktp.Forms
         private void DetallesEvento_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void saveData()
+        {
+            CCAA ccaa = new CCAA();
+            evento = new EVENTOS();
+            evento.titulo = textBoxTitulo.Text;
+            evento.descripcion = richTextBoxDescripcion.Text;
+            if (checkBoxGlobal.Checked)
+            {
+                evento.ctrlglobal = 1;
+            }
+            else
+            {
+                evento.ctrlglobal = 0;
+            }
+            if (checkBoxActivado.Checked)
+            {
+                evento.estado = 1;
+            }
+            else
+            {
+                evento.estado = 0;
+            }
+            evento.intro = richTextBoxIntroduccion.Text;
+            evento.notastransporte = richTextBoxTransporte.Text;
+            evento.fechainicio = dateTimePickerInicio.Value.Date;
+            evento.horainicio = TimeSpan.Parse(textBoxHoraInicio.Text);
+            evento.fechafin = dateTimePickerFechaFin.Value.Date;
+            evento.horafin = TimeSpan.Parse(textBoxHoraFin.Text);
+            evento.ciudad = textBoxCiudad.Text;
+            evento.codigopostal = textBoxCodigoPostal.Text;
+            evento.email = textBoxEmail.Text;
+            evento.idprovincia = (byte)comboBoxProvincia.SelectedValue;
+            evento.idccaa = (byte)comboBoxComunidad.SelectedValue;
+            if (pictureBoxImagenEvento.Image != null)
+            {
+                try
+                {
+                    System.Drawing.Image image = System.Drawing.Image.FromFile(destino);
+                    evento.imagen = ImageToByteArraybyImageConverter(image);
+                }
+                catch (FileNotFoundException excep)
+                {
+                    Console.WriteLine(excep.Message);
+                }
+            }
+            evento.iddelegacion = (int)comboBoxDelegacion.SelectedValue;
+            evento.telefono = textBoxTelefono.Text;
+            evento.responsable = textBoxContacto.Text;
+            if (Publica.idusuario != 0) { evento.iddsktuser = Publica.idusuario; }
         }
 
 
