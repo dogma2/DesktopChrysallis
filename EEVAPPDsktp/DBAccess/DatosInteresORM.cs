@@ -60,5 +60,25 @@ namespace EEVAPPDsktp.DBAccess
             ORM.dbe.DATOSINTERES.Remove(entidad);
             return DBAccess.ORM.SaveChanges();
         }
+        public static List<DATOSINTERES> SelectByFilters(string nombre, byte estado, string ciudad, int iddelegacion)
+        {
+            String theW = "";
+            if (nombre.Length >= 0) { theW += (theW.Length > 0 ? " AND " : "") + "(d.nombre LIKE '%" + nombre + "%')"; }
+            if (estado == 1) { theW += (theW.Length > 0 ? " AND " : "") + "(d.estado = 1)"; }
+            else if (estado == 2) { theW += (theW.Length > 0 ? " AND " : "") + "(d.estado = 0)"; }
+            if (ciudad.Length >= 0) { theW += (theW.Length > 0 ? " AND " : "") + "(d.ciudad LIKE '%" + ciudad + "%')"; }
+            if (iddelegacion > 0) { theW += (theW.Length > 0 ? " AND " : "") + "(d.iddelegacion = " + iddelegacion + ")"; }
+            theW = (theW.Length > 0 ? " WHERE " : "") + theW;
+            String theQ = "SELECT d.id, d.estado, d.nombre, d.descripcion, d.direccion, d.ciudad, d.cp, d.idprovincia, d.idccaa, d.telefono, d.email , d.contacto, d.ctrlglobal, d.iddelegacion, d.iddsktuser FROM DATOSINTERES AS d" +
+                theW + " ORDER BY d.ciudad ASC";
+           
+            // Console.WriteLine("email.Length: " + email.Length);
+            // Console.WriteLine("estado: " + estado);
+            // Console.WriteLine("idsocio.Length: " + idsocio.Length);
+            // Console.WriteLine("iddelegacion: " + iddelegacion);
+            // Console.WriteLine("theQ: " + theQ);
+            List<DATOSINTERES> _entidades = ORM.dbe.DATOSINTERES.SqlQuery(theQ).ToList();
+            return _entidades;
+        }
     }
 }
