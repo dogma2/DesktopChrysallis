@@ -33,7 +33,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonSeleccionarImagen = new System.Windows.Forms.Button();
             this.pictureBoxImagenEvento = new System.Windows.Forms.PictureBox();
-            this.labelSalir = new System.Windows.Forms.Label();
             this.groupBoxDocumentos = new System.Windows.Forms.GroupBox();
             this.buttonEliminarDocumento = new System.Windows.Forms.Button();
             this.buttonAgregarDocumento = new System.Windows.Forms.Button();
@@ -76,19 +75,21 @@
             this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFechaFin = new System.Windows.Forms.DateTimePicker();
             this.textBoxHoraFin = new System.Windows.Forms.TextBox();
-            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxComunidad = new System.Windows.Forms.ComboBox();
             this.comboBoxProvincia = new System.Windows.Forms.ComboBox();
-            this.bindingSourceProvincias = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceDelegaciones = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxDelegacion = new System.Windows.Forms.ComboBox();
             this.labelDelegacion = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bindingSourceComunidades = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceProvincias = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).BeginInit();
             this.groupBoxDocumentos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDelegaciones)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProvincias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDelegaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -96,9 +97,9 @@
             this.groupBox1.Controls.Add(this.buttonSeleccionarImagen);
             this.groupBox1.Controls.Add(this.pictureBoxImagenEvento);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(35, 37);
+            this.groupBox1.Location = new System.Drawing.Point(16, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 203);
+            this.groupBox1.Size = new System.Drawing.Size(211, 217);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Imágen";
@@ -106,7 +107,7 @@
             // buttonSeleccionarImagen
             // 
             this.buttonSeleccionarImagen.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonSeleccionarImagen.Location = new System.Drawing.Point(111, 171);
+            this.buttonSeleccionarImagen.Location = new System.Drawing.Point(130, 188);
             this.buttonSeleccionarImagen.Name = "buttonSeleccionarImagen";
             this.buttonSeleccionarImagen.Size = new System.Drawing.Size(75, 23);
             this.buttonSeleccionarImagen.TabIndex = 1;
@@ -118,33 +119,24 @@
             // 
             this.pictureBoxImagenEvento.Location = new System.Drawing.Point(6, 19);
             this.pictureBoxImagenEvento.Name = "pictureBoxImagenEvento";
-            this.pictureBoxImagenEvento.Size = new System.Drawing.Size(179, 146);
+            this.pictureBoxImagenEvento.Size = new System.Drawing.Size(199, 150);
             this.pictureBoxImagenEvento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImagenEvento.TabIndex = 0;
             this.pictureBoxImagenEvento.TabStop = false;
-            // 
-            // labelSalir
-            // 
-            this.labelSalir.AutoSize = true;
-            this.labelSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelSalir.Location = new System.Drawing.Point(13, 13);
-            this.labelSalir.Name = "labelSalir";
-            this.labelSalir.Size = new System.Drawing.Size(27, 13);
-            this.labelSalir.TabIndex = 1;
-            this.labelSalir.Text = "Salir";
-            this.labelSalir.Click += new System.EventHandler(this.labelSalir_Click);
+            this.pictureBoxImagenEvento.Click += new System.EventHandler(this.pictureBoxImagenEvento_Click);
             // 
             // groupBoxDocumentos
             // 
             this.groupBoxDocumentos.Controls.Add(this.buttonEliminarDocumento);
             this.groupBoxDocumentos.Controls.Add(this.buttonAgregarDocumento);
             this.groupBoxDocumentos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBoxDocumentos.Location = new System.Drawing.Point(35, 255);
+            this.groupBoxDocumentos.Location = new System.Drawing.Point(16, 255);
             this.groupBoxDocumentos.Name = "groupBoxDocumentos";
-            this.groupBoxDocumentos.Size = new System.Drawing.Size(192, 204);
+            this.groupBoxDocumentos.Size = new System.Drawing.Size(211, 204);
             this.groupBoxDocumentos.TabIndex = 2;
             this.groupBoxDocumentos.TabStop = false;
             this.groupBoxDocumentos.Text = "Documentos";
+            this.groupBoxDocumentos.Visible = false;
             // 
             // buttonEliminarDocumento
             // 
@@ -172,25 +164,28 @@
             this.textBoxTitulo.Name = "textBoxTitulo";
             this.textBoxTitulo.Size = new System.Drawing.Size(673, 20);
             this.textBoxTitulo.TabIndex = 3;
+            this.textBoxTitulo.TextChanged += new System.EventHandler(this.textBoxTitulo_TextChanged);
             // 
             // checkBoxGlobal
             // 
             this.checkBoxGlobal.AutoSize = true;
-            this.checkBoxGlobal.Location = new System.Drawing.Point(957, 43);
+            this.checkBoxGlobal.Location = new System.Drawing.Point(945, 43);
             this.checkBoxGlobal.Name = "checkBoxGlobal";
             this.checkBoxGlobal.Size = new System.Drawing.Size(15, 14);
             this.checkBoxGlobal.TabIndex = 4;
             this.checkBoxGlobal.UseVisualStyleBackColor = true;
+            this.checkBoxGlobal.CheckedChanged += new System.EventHandler(this.checkBoxGlobal_CheckedChanged);
             // 
             // checkBoxActivado
             // 
             this.checkBoxActivado.AutoSize = true;
-            this.checkBoxActivado.Location = new System.Drawing.Point(999, 43);
+            this.checkBoxActivado.Location = new System.Drawing.Point(987, 43);
             this.checkBoxActivado.Name = "checkBoxActivado";
             this.checkBoxActivado.Size = new System.Drawing.Size(15, 14);
             this.checkBoxActivado.TabIndex = 5;
             this.checkBoxActivado.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.checkBoxActivado.UseVisualStyleBackColor = true;
+            this.checkBoxActivado.CheckedChanged += new System.EventHandler(this.checkBoxActivado_CheckedChanged);
             // 
             // labelTitulo
             // 
@@ -206,7 +201,7 @@
             // 
             this.labelGlobal.AutoSize = true;
             this.labelGlobal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelGlobal.Location = new System.Drawing.Point(945, 27);
+            this.labelGlobal.Location = new System.Drawing.Point(933, 27);
             this.labelGlobal.Name = "labelGlobal";
             this.labelGlobal.Size = new System.Drawing.Size(37, 13);
             this.labelGlobal.TabIndex = 7;
@@ -216,7 +211,7 @@
             // 
             this.labelActivo.AutoSize = true;
             this.labelActivo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelActivo.Location = new System.Drawing.Point(988, 27);
+            this.labelActivo.Location = new System.Drawing.Point(976, 27);
             this.labelActivo.Name = "labelActivo";
             this.labelActivo.Size = new System.Drawing.Size(37, 13);
             this.labelActivo.TabIndex = 8;
@@ -229,6 +224,7 @@
             this.richTextBoxDescripcion.Size = new System.Drawing.Size(765, 96);
             this.richTextBoxDescripcion.TabIndex = 9;
             this.richTextBoxDescripcion.Text = "";
+            this.richTextBoxDescripcion.TextChanged += new System.EventHandler(this.richTextBoxDescripcion_TextChanged);
             // 
             // richTextBoxIntroduccion
             // 
@@ -237,6 +233,7 @@
             this.richTextBoxIntroduccion.Size = new System.Drawing.Size(358, 168);
             this.richTextBoxIntroduccion.TabIndex = 10;
             this.richTextBoxIntroduccion.Text = "";
+            this.richTextBoxIntroduccion.TextChanged += new System.EventHandler(this.richTextBoxIntroduccion_TextChanged);
             // 
             // richTextBoxTransporte
             // 
@@ -245,6 +242,7 @@
             this.richTextBoxTransporte.Size = new System.Drawing.Size(370, 168);
             this.richTextBoxTransporte.TabIndex = 11;
             this.richTextBoxTransporte.Text = "";
+            this.richTextBoxTransporte.TextChanged += new System.EventHandler(this.richTextBoxTransporte_TextChanged);
             // 
             // labelIntroduccion
             // 
@@ -282,6 +280,7 @@
             this.textBoxHoraInicio.Name = "textBoxHoraInicio";
             this.textBoxHoraInicio.Size = new System.Drawing.Size(93, 20);
             this.textBoxHoraInicio.TabIndex = 16;
+            this.textBoxHoraInicio.TextChanged += new System.EventHandler(this.textBoxHoraInicio_TextChanged);
             // 
             // labelFechaInicio
             // 
@@ -329,6 +328,7 @@
             this.textBoxCiudad.Name = "textBoxCiudad";
             this.textBoxCiudad.Size = new System.Drawing.Size(198, 20);
             this.textBoxCiudad.TabIndex = 23;
+            this.textBoxCiudad.TextChanged += new System.EventHandler(this.textBoxCiudad_TextChanged);
             // 
             // textBoxCodigoPostal
             // 
@@ -336,6 +336,7 @@
             this.textBoxCodigoPostal.Name = "textBoxCodigoPostal";
             this.textBoxCodigoPostal.Size = new System.Drawing.Size(85, 20);
             this.textBoxCodigoPostal.TabIndex = 24;
+            this.textBoxCodigoPostal.TextChanged += new System.EventHandler(this.textBoxCodigoPostal_TextChanged);
             // 
             // labelCiudad
             // 
@@ -383,6 +384,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(304, 20);
             this.textBoxEmail.TabIndex = 31;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // textBoxTelefono
             // 
@@ -390,6 +392,7 @@
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(155, 20);
             this.textBoxTelefono.TabIndex = 32;
+            this.textBoxTelefono.TextChanged += new System.EventHandler(this.textBoxTelefono_TextChanged);
             // 
             // textBoxContacto
             // 
@@ -397,6 +400,7 @@
             this.textBoxContacto.Name = "textBoxContacto";
             this.textBoxContacto.Size = new System.Drawing.Size(268, 20);
             this.textBoxContacto.TabIndex = 33;
+            this.textBoxContacto.TextChanged += new System.EventHandler(this.textBoxContacto_TextChanged);
             // 
             // labelEmail
             // 
@@ -430,41 +434,40 @@
             // 
             // buttonGuardarEvento
             // 
-            this.buttonGuardarEvento.Location = new System.Drawing.Point(939, 526);
+            this.buttonGuardarEvento.Location = new System.Drawing.Point(939, 539);
             this.buttonGuardarEvento.Name = "buttonGuardarEvento";
             this.buttonGuardarEvento.Size = new System.Drawing.Size(75, 23);
             this.buttonGuardarEvento.TabIndex = 37;
-            this.buttonGuardarEvento.Text = "Guardar";
+            this.buttonGuardarEvento.Text = "Almacenar";
             this.buttonGuardarEvento.UseVisualStyleBackColor = true;
-            this.buttonGuardarEvento.Click += new System.EventHandler(this.buttonGuardarEvento_Click);
+            this.buttonGuardarEvento.Click += new System.EventHandler(this.buttonAlmacenar_Click);
             // 
             // buttonCancelarEvento
             // 
-            this.buttonCancelarEvento.Location = new System.Drawing.Point(842, 525);
+            this.buttonCancelarEvento.Location = new System.Drawing.Point(842, 538);
             this.buttonCancelarEvento.Name = "buttonCancelarEvento";
             this.buttonCancelarEvento.Size = new System.Drawing.Size(75, 23);
             this.buttonCancelarEvento.TabIndex = 38;
             this.buttonCancelarEvento.Text = "Cancelar";
             this.buttonCancelarEvento.UseVisualStyleBackColor = true;
-            this.buttonCancelarEvento.Click += new System.EventHandler(this.buttonCancelarEvento_Click);
             // 
             // textBoxInscritos
             // 
-            this.textBoxInscritos.Location = new System.Drawing.Point(25, 486);
+            this.textBoxInscritos.Location = new System.Drawing.Point(6, 35);
             this.textBoxInscritos.Name = "textBoxInscritos";
             this.textBoxInscritos.Size = new System.Drawing.Size(53, 20);
             this.textBoxInscritos.TabIndex = 39;
             // 
             // textBoxAsistentes
             // 
-            this.textBoxAsistentes.Location = new System.Drawing.Point(84, 486);
+            this.textBoxAsistentes.Location = new System.Drawing.Point(65, 35);
             this.textBoxAsistentes.Name = "textBoxAsistentes";
             this.textBoxAsistentes.Size = new System.Drawing.Size(62, 20);
             this.textBoxAsistentes.TabIndex = 40;
             // 
             // buttonGestionar
             // 
-            this.buttonGestionar.Location = new System.Drawing.Point(152, 483);
+            this.buttonGestionar.Location = new System.Drawing.Point(133, 32);
             this.buttonGestionar.Name = "buttonGestionar";
             this.buttonGestionar.Size = new System.Drawing.Size(75, 23);
             this.buttonGestionar.TabIndex = 41;
@@ -475,7 +478,7 @@
             // 
             this.labelInscritos.AutoSize = true;
             this.labelInscritos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelInscritos.Location = new System.Drawing.Point(32, 470);
+            this.labelInscritos.Location = new System.Drawing.Point(13, 19);
             this.labelInscritos.Name = "labelInscritos";
             this.labelInscritos.Size = new System.Drawing.Size(46, 13);
             this.labelInscritos.TabIndex = 42;
@@ -485,7 +488,7 @@
             // 
             this.labelAsistentes.AutoSize = true;
             this.labelAsistentes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelAsistentes.Location = new System.Drawing.Point(91, 470);
+            this.labelAsistentes.Location = new System.Drawing.Point(72, 19);
             this.labelAsistentes.Name = "labelAsistentes";
             this.labelAsistentes.Size = new System.Drawing.Size(55, 13);
             this.labelAsistentes.TabIndex = 43;
@@ -499,6 +502,7 @@
             this.dateTimePickerInicio.Size = new System.Drawing.Size(123, 20);
             this.dateTimePickerInicio.TabIndex = 44;
             this.dateTimePickerInicio.Value = new System.DateTime(2020, 4, 18, 0, 0, 0, 0);
+            this.dateTimePickerInicio.ValueChanged += new System.EventHandler(this.dateTimePickerInicio_ValueChanged);
             // 
             // dateTimePickerFechaFin
             // 
@@ -507,6 +511,7 @@
             this.dateTimePickerFechaFin.Name = "dateTimePickerFechaFin";
             this.dateTimePickerFechaFin.Size = new System.Drawing.Size(123, 20);
             this.dateTimePickerFechaFin.TabIndex = 45;
+            this.dateTimePickerFechaFin.ValueChanged += new System.EventHandler(this.dateTimePickerFechaFin_ValueChanged);
             // 
             // textBoxHoraFin
             // 
@@ -514,10 +519,7 @@
             this.textBoxHoraFin.Name = "textBoxHoraFin";
             this.textBoxHoraFin.Size = new System.Drawing.Size(147, 20);
             this.textBoxHoraFin.TabIndex = 18;
-            // 
-            // bindingSourceComunidades
-            // 
-            this.bindingSourceComunidades.DataSource = typeof(EEVAPPDsktp.CCAA);
+            this.textBoxHoraFin.TextChanged += new System.EventHandler(this.textBoxHoraFin_TextChanged);
             // 
             // comboBoxComunidad
             // 
@@ -544,10 +546,7 @@
             this.comboBoxProvincia.Size = new System.Drawing.Size(207, 21);
             this.comboBoxProvincia.TabIndex = 47;
             this.comboBoxProvincia.ValueMember = "id";
-            // 
-            // bindingSourceProvincias
-            // 
-            this.bindingSourceProvincias.DataSource = typeof(EEVAPPDsktp.PROVINCIAS);
+            this.comboBoxProvincia.SelectedIndexChanged += new System.EventHandler(this.comboBoxProvincia_SelectedIndexChanged);
             // 
             // bindingSourceDelegaciones
             // 
@@ -564,6 +563,7 @@
             this.comboBoxDelegacion.Size = new System.Drawing.Size(174, 21);
             this.comboBoxDelegacion.TabIndex = 49;
             this.comboBoxDelegacion.ValueMember = "id";
+            this.comboBoxDelegacion.SelectedIndexChanged += new System.EventHandler(this.comboBoxDelegacion_SelectedIndexChanged);
             // 
             // labelDelegacion
             // 
@@ -575,23 +575,42 @@
             this.labelDelegacion.TabIndex = 48;
             this.labelDelegacion.Text = "Delegación";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBoxInscritos);
+            this.groupBox2.Controls.Add(this.textBoxAsistentes);
+            this.groupBox2.Controls.Add(this.buttonGestionar);
+            this.groupBox2.Controls.Add(this.labelInscritos);
+            this.groupBox2.Controls.Add(this.labelAsistentes);
+            this.groupBox2.Location = new System.Drawing.Point(35, 478);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(192, 70);
+            this.groupBox2.TabIndex = 50;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Visible = false;
+            // 
+            // bindingSourceComunidades
+            // 
+            this.bindingSourceComunidades.DataSource = typeof(EEVAPPDsktp.CCAA);
+            // 
+            // bindingSourceProvincias
+            // 
+            this.bindingSourceProvincias.DataSource = typeof(EEVAPPDsktp.PROVINCIAS);
+            // 
             // DetallesEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1048, 569);
+            this.ClientSize = new System.Drawing.Size(1035, 592);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.comboBoxDelegacion);
             this.Controls.Add(this.labelDelegacion);
             this.Controls.Add(this.comboBoxComunidad);
             this.Controls.Add(this.comboBoxProvincia);
             this.Controls.Add(this.dateTimePickerFechaFin);
             this.Controls.Add(this.dateTimePickerInicio);
-            this.Controls.Add(this.labelAsistentes);
-            this.Controls.Add(this.labelInscritos);
-            this.Controls.Add(this.buttonGestionar);
-            this.Controls.Add(this.textBoxAsistentes);
-            this.Controls.Add(this.textBoxInscritos);
             this.Controls.Add(this.buttonCancelarEvento);
             this.Controls.Add(this.buttonGuardarEvento);
             this.Controls.Add(this.labelPersonaContacto);
@@ -625,19 +644,19 @@
             this.Controls.Add(this.checkBoxGlobal);
             this.Controls.Add(this.textBoxTitulo);
             this.Controls.Add(this.groupBoxDocumentos);
-            this.Controls.Add(this.labelSalir);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetallesEvento";
-            this.Text = "EVENTOS";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetallesEvento_FormClosing);
+            this.Text = "Eventos";
             this.Load += new System.EventHandler(this.DetallesEvento_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagenEvento)).EndInit();
             this.groupBoxDocumentos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDelegaciones)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceComunidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProvincias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDelegaciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,7 +667,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonSeleccionarImagen;
         private System.Windows.Forms.PictureBox pictureBoxImagenEvento;
-        private System.Windows.Forms.Label labelSalir;
         private System.Windows.Forms.GroupBox groupBoxDocumentos;
         private System.Windows.Forms.Button buttonEliminarDocumento;
         private System.Windows.Forms.Button buttonAgregarDocumento;
@@ -691,12 +709,13 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
         private System.Windows.Forms.DateTimePicker dateTimePickerFechaFin;
         private System.Windows.Forms.TextBox textBoxHoraFin;
-        private System.Windows.Forms.BindingSource bindingSourceComunidades;
         private System.Windows.Forms.ComboBox comboBoxComunidad;
         private System.Windows.Forms.ComboBox comboBoxProvincia;
-        private System.Windows.Forms.BindingSource bindingSourceProvincias;
         private System.Windows.Forms.BindingSource bindingSourceDelegaciones;
         private System.Windows.Forms.ComboBox comboBoxDelegacion;
         private System.Windows.Forms.Label labelDelegacion;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.BindingSource bindingSourceComunidades;
+        private System.Windows.Forms.BindingSource bindingSourceProvincias;
     }
 }

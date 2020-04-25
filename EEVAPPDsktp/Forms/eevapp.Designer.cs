@@ -151,6 +151,7 @@
             this.toolStripMenuItemTraducciones.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
             this.toolStripMenuItemTraducciones.Size = new System.Drawing.Size(221, 22);
             this.toolStripMenuItemTraducciones.Text = "Traducciones";
+            this.toolStripMenuItemTraducciones.Visible = false;
             this.toolStripMenuItemTraducciones.Click += new System.EventHandler(this.toolStripMenuItemTraducciones_Click);
             // 
             // toolStripMenuItemConfiguracionInicial

@@ -72,7 +72,9 @@ namespace EEVAPPDsktp.DBAccess
             if (ciudad.Length > 0) { theW += (theW.Length > 0 ? " AND " : "") + "(e.ciudad LIKE '%" + ciudad + "%')"; }
             if (iddelegacion > 0) { theW += (theW.Length > 0 ? " AND " : "") + "(e.iddelegacion = " + iddelegacion + ")"; }
             theW = (theW.Length > 0 ? " WHERE " : "") + theW;
-            String theQ = "SELECT e.cidevento,  e.fechainicio, e.titulo, e.estado, e.ciudad, e.iddelegacion FROM EVENTOS AS e" +
+            // String theQ = "SELECT e.cidevento,  e.fechainicio, e.titulo, e.estado, e.ciudad, e.iddelegacion FROM EVENTOS AS e" +
+            //    theW + " ORDER BY e.cidevento DESC";
+            String theQ = "SELECT * FROM EVENTOS AS e" +
                 theW + " ORDER BY e.cidevento DESC";
             // Console.WriteLine("email.Length: " + email.Length);
             // Console.WriteLine("estado: " + estado);

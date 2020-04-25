@@ -41,13 +41,6 @@
             this.textBoxCodigoSocio = new System.Windows.Forms.TextBox();
             this.labelCodigoSocio = new System.Windows.Forms.Label();
             this.dataGridViewListaSocios = new System.Windows.Forms.DataGridView();
-            this.bindingSourceSocios = new System.Windows.Forms.BindingSource(this.components);
-            this.labelListaSocios = new System.Windows.Forms.Label();
-            this.menuStripOpciones = new System.Windows.Forms.MenuStrip();
-            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activadesactivaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idsocioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +56,13 @@
             this.ASISTENTES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DELEGACIONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSKTUSERS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceSocios = new System.Windows.Forms.BindingSource(this.components);
+            this.labelListaSocios = new System.Windows.Forms.Label();
+            this.menuStripOpciones = new System.Windows.Forms.MenuStrip();
+            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activadesactivaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDelegaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaSocios)).BeginInit();
@@ -81,7 +81,7 @@
             this.groupBoxFiltros.Controls.Add(this.textBoxCodigoSocio);
             this.groupBoxFiltros.Controls.Add(this.labelCodigoSocio);
             this.groupBoxFiltros.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupBoxFiltros.Location = new System.Drawing.Point(17, 40);
+            this.groupBoxFiltros.Location = new System.Drawing.Point(12, 36);
             this.groupBoxFiltros.Name = "groupBoxFiltros";
             this.groupBoxFiltros.Size = new System.Drawing.Size(950, 77);
             this.groupBoxFiltros.TabIndex = 1;
@@ -105,7 +105,7 @@
             // labelLangText
             // 
             this.labelLangText.AutoSize = true;
-            this.labelLangText.Location = new System.Drawing.Point(389, 25);
+            this.labelLangText.Location = new System.Drawing.Point(389, 24);
             this.labelLangText.Name = "labelLangText";
             this.labelLangText.Size = new System.Drawing.Size(86, 13);
             this.labelLangText.TabIndex = 0;
@@ -148,7 +148,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(16, 25);
+            this.labelEmail.Location = new System.Drawing.Point(14, 24);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(78, 13);
             this.labelEmail.TabIndex = 0;
@@ -195,7 +195,7 @@
             this.DELEGACIONES,
             this.DSKTUSERS});
             this.dataGridViewListaSocios.DataSource = this.bindingSourceSocios;
-            this.dataGridViewListaSocios.Location = new System.Drawing.Point(17, 143);
+            this.dataGridViewListaSocios.Location = new System.Drawing.Point(12, 144);
             this.dataGridViewListaSocios.MultiSelect = false;
             this.dataGridViewListaSocios.Name = "dataGridViewListaSocios";
             this.dataGridViewListaSocios.ReadOnly = true;
@@ -203,73 +203,6 @@
             this.dataGridViewListaSocios.Size = new System.Drawing.Size(950, 334);
             this.dataGridViewListaSocios.TabIndex = 20;
             this.dataGridViewListaSocios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewListaSocios_CellFormatting);
-            // 
-            // bindingSourceSocios
-            // 
-            this.bindingSourceSocios.DataSource = typeof(EEVAPPDsktp.USUARIOS);
-            // 
-            // labelListaSocios
-            // 
-            this.labelListaSocios.AutoSize = true;
-            this.labelListaSocios.ForeColor = System.Drawing.Color.White;
-            this.labelListaSocios.Location = new System.Drawing.Point(14, 127);
-            this.labelListaSocios.Name = "labelListaSocios";
-            this.labelListaSocios.Size = new System.Drawing.Size(79, 13);
-            this.labelListaSocios.TabIndex = 0;
-            this.labelListaSocios.Text = "Lista de Socios";
-            // 
-            // menuStripOpciones
-            // 
-            this.menuStripOpciones.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.menuStripOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoToolStripMenuItem,
-            this.modificarToolStripMenuItem,
-            this.eliminarToolStripMenuItem,
-            this.activadesactivaToolStripMenuItem});
-            this.menuStripOpciones.Location = new System.Drawing.Point(0, 0);
-            this.menuStripOpciones.Name = "menuStripOpciones";
-            this.menuStripOpciones.Size = new System.Drawing.Size(985, 24);
-            this.menuStripOpciones.TabIndex = 0;
-            this.menuStripOpciones.Text = "menuStrip1";
-            // 
-            // nuevoToolStripMenuItem
-            // 
-            this.nuevoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.nuevoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoToolStripMenuItem.Image")));
-            this.nuevoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.nuevoToolStripMenuItem.Text = "nuevo";
-            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.modificarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("modificarToolStripMenuItem.Image")));
-            this.modificarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.modificarToolStripMenuItem.Text = "modificar";
-            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.eliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarToolStripMenuItem.Image")));
-            this.eliminarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.eliminarToolStripMenuItem.Text = "eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // activadesactivaToolStripMenuItem
-            // 
-            this.activadesactivaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.activadesactivaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("activadesactivaToolStripMenuItem.Image")));
-            this.activadesactivaToolStripMenuItem.Name = "activadesactivaToolStripMenuItem";
-            this.activadesactivaToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
-            this.activadesactivaToolStripMenuItem.Text = "activa/desactiva";
-            this.activadesactivaToolStripMenuItem.Click += new System.EventHandler(this.activadesactivaToolStripMenuItem_Click);
             // 
             // emailDataGridViewTextBoxColumn
             // 
@@ -389,12 +322,79 @@
             this.DSKTUSERS.ReadOnly = true;
             this.DSKTUSERS.Visible = false;
             // 
+            // bindingSourceSocios
+            // 
+            this.bindingSourceSocios.DataSource = typeof(EEVAPPDsktp.USUARIOS);
+            // 
+            // labelListaSocios
+            // 
+            this.labelListaSocios.AutoSize = true;
+            this.labelListaSocios.ForeColor = System.Drawing.Color.White;
+            this.labelListaSocios.Location = new System.Drawing.Point(9, 128);
+            this.labelListaSocios.Name = "labelListaSocios";
+            this.labelListaSocios.Size = new System.Drawing.Size(79, 13);
+            this.labelListaSocios.TabIndex = 0;
+            this.labelListaSocios.Text = "Lista de Socios";
+            // 
+            // menuStripOpciones
+            // 
+            this.menuStripOpciones.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.menuStripOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem,
+            this.modificarToolStripMenuItem,
+            this.eliminarToolStripMenuItem,
+            this.activadesactivaToolStripMenuItem});
+            this.menuStripOpciones.Location = new System.Drawing.Point(0, 0);
+            this.menuStripOpciones.Name = "menuStripOpciones";
+            this.menuStripOpciones.Size = new System.Drawing.Size(975, 24);
+            this.menuStripOpciones.TabIndex = 0;
+            this.menuStripOpciones.Text = "menuStrip1";
+            // 
+            // nuevoToolStripMenuItem
+            // 
+            this.nuevoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.nuevoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoToolStripMenuItem.Image")));
+            this.nuevoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.nuevoToolStripMenuItem.Text = "nuevo";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.modificarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("modificarToolStripMenuItem.Image")));
+            this.modificarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.modificarToolStripMenuItem.Text = "modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.eliminarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("eliminarToolStripMenuItem.Image")));
+            this.eliminarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.eliminarToolStripMenuItem.Text = "eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // activadesactivaToolStripMenuItem
+            // 
+            this.activadesactivaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.activadesactivaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("activadesactivaToolStripMenuItem.Image")));
+            this.activadesactivaToolStripMenuItem.Name = "activadesactivaToolStripMenuItem";
+            this.activadesactivaToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.activadesactivaToolStripMenuItem.Text = "activa/desactiva";
+            this.activadesactivaToolStripMenuItem.Click += new System.EventHandler(this.activadesactivaToolStripMenuItem_Click);
+            // 
             // Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(985, 498);
+            this.ClientSize = new System.Drawing.Size(975, 498);
             this.Controls.Add(this.labelListaSocios);
             this.Controls.Add(this.dataGridViewListaSocios);
             this.Controls.Add(this.groupBoxFiltros);
